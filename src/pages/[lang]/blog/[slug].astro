@@ -29,29 +29,7 @@ const isCa = lang === 'ca';
     <meta charset="utf-8" />
     <title>{entry.data.title} | GrowthCalc</title>
     <meta name="viewport" content="width=device-width" />
-    <style is:global>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .prose {
-        max-width: 65ch;
-        color: #374151;
-        line-height: 1.75;
-      }
-      .dark .prose {
-        color: #d1d5db;
-      }
-      .prose h1, .prose h2, .prose h3 {
-        color: #111827;
-        font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-      }
-      .dark .prose h1, .dark .prose h2, .dark .prose h3 {
-        color: #f9fafb;
-      }
-    </style>
+    <link rel="stylesheet" href="../../../styles/global.css" />
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
