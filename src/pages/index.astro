@@ -3,8 +3,9 @@ import Calculator from '../components/Calculator';
 import '../styles/global.css';
 
 const lang = 'es';
-const title = 'Calculadora de ROAS & ROI - Herramienta de Growth Marketing';
-const description = 'Calcula el ROAS, ROI, CPA y margen de tus campañas publicitarias con precisión y gráficos en tiempo real.';
+const title = 'Ads Calculator | Calculadora ROAS & ROI Profesional';
+const description = 'Calcula ROAS, ROI y breakeven de tus Ads. Mide el beneficio real con gráficos interactivos.';
+const keywords = 'calculadora ads, calculadora roas, calculadora roi, rentabilidad ads, growth marketing, roi ads, roas ads';
 
 const t = {
   heroSubtitle: 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.',
@@ -19,7 +20,7 @@ const t = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "ROAS & ROI Business Calculator",
+  "name": "Ads Calculator - ROAS & ROI Business Tool",
   "operatingSystem": "All",
   "applicationCategory": "BusinessApplication",
   "description": description,
@@ -39,6 +40,12 @@ const jsonLd = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://adscalculator.app/" />
+    <link rel="alternate" hreflang="es" href="https://adscalculator.app/" />
+    <link rel="alternate" hreflang="ca" href="https://adscalculator.app/ca" />
+    <link rel="alternate" hreflang="x-default" href="https://adscalculator.app/" />
     
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
@@ -49,7 +56,7 @@ const jsonLd = {
           <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
           </div>
-          Growth<span class="text-blue-600 italic">Calc</span>
+          Ads <span class="text-blue-600 italic">Calculator</span>
         </div>
         <nav class="flex gap-6 items-center">
           <a href="/blog" class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">
@@ -114,9 +121,9 @@ const jsonLd = {
               <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
               </div>
-              Growth<span class="text-blue-600 italic">Calc</span>
+              Ads <span class="text-blue-600 italic">Calculator</span>
            </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 GrowthCalc. Todos los derechos reservados.</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. Todos los derechos reservados.</p>
         </div>
         <div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href="#" class="hover:text-blue-600 transition-colors">Twitter</a>

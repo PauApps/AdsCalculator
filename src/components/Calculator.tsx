@@ -142,7 +142,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
 
   const handleCopy = () => {
     const text = `
-    📊 ${t.title}
+    📊 ${t.title} - Ads Calculator
     -----------------------
     📈 ${t.investment}:
     - ${t.adSpend}: ${adSpend}€

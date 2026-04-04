@@ -21,14 +21,14 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <title>{title} | GrowthCalc</title>
+    <title>{title} | Ads Calculator</title>
     <meta name="viewport" content="width=device-width" />
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href={`/${lang}`} class="font-bold text-xl">Growth<span class="text-blue-600">Calc</span></a>
-        <a href={`/${lang}`} class="text-sm font-medium hover:text-blue-600 transition-colors">Volver a Calculadora</a>
+        <a href={`/${lang}`} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
+        <a href={`/${lang}`} class="text-sm font-medium hover:text-blue-600 transition-colors">{isCa ? 'Tornar a la Calculadora' : 'Volver a Calculadora'}</a>
       </div>
     </header>
 
@@ -36,14 +36,14 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
       <h1 class="text-3xl font-bold mb-8">{title}</h1>
       
       {posts.length === 0 ? (
-        <div class="text-gray-500">No hay posts todavía. Próximamente...</div>
+        <div class="text-gray-500">{isCa ? 'No hi ha posts encara. Pròximament...' : 'No hay posts todavía. Próximamente...'}</div>
       ) : (
         <div class="grid gap-6">
           {posts.map(post => (
             <a href={`/${lang}/blog/${post.slug}`} class="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-colors">
               <h2 class="text-xl font-semibold mb-2">{post.data.title}</h2>
               <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">{post.data.description}</p>
-              <span class="text-blue-600 dark:text-blue-400 text-sm font-medium">Leer más →</span>
+              <span class="text-blue-600 dark:text-blue-400 text-sm font-medium">{isCa ? 'Llegir més →' : 'Leer más →'}</span>
             </a>
           ))}
         </div>

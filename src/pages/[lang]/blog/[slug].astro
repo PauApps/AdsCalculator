@@ -28,13 +28,13 @@ const isCa = lang === 'ca';
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <title>{entry.data.title} | GrowthCalc</title>
+    <title>{entry.data.title} | Ads Calculator</title>
     <meta name="viewport" content="width=device-width" />
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href={`/${lang}`} class="font-bold text-xl">Growth<span class="text-blue-600">Calc</span></a>
+        <a href={`/${lang}`} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
         <a href={`/${lang}/blog`} class="text-sm font-medium hover:text-blue-600 transition-colors">← {isCa ? 'Tornar al Blog' : 'Volver al Blog'}</a>
       </div>
     </header>
@@ -50,7 +50,7 @@ const isCa = lang === 'ca';
     </main>
 
     <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 dark:text-gray-400 text-sm">
-        <p>© 2026 GrowthCalc. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+        <p>© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
     </footer>
   </body>
 </html>

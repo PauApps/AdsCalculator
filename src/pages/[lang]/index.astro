@@ -9,15 +9,15 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-
 const isCa = lang === 'ca';
-const title = isCa ? 'Calculadora de ROAS & ROI - Eina de Growth Marketing' : 'Calculadora de ROAS & ROI - Herramienta de Growth Marketing';
-const description = isCa ? 'Calcula el ROAS, ROI, CPA i marge de les teves campanyes publicitàries amb precisió i gràfics en temps real.' : 'Calcula el ROAS, ROI, CPA y margen de tus campañas publicitarias con precisión y gráficos en tiempo real.';
+const title = isCa ? 'Ads Calculator | Calculadora ROAS & ROI Professional' : 'Ads Calculator | Calculadora ROAS & ROI Profesional';
+const description = isCa ? 'Calcula ROAS, ROI i breakeven dels teus Ads. Mesura el benefici real amb gràfics interactius.' : 'Calcula ROAS, ROI y breakeven de tus Ads. Mide el beneficio real con gráficos interactivos.';
+const keywords = isCa ? 'calculadora ads, calculadora roas, calculadora roi, rendibilitat ads, growth marketing, roi ads, roas ads' : 'calculadora ads, calculadora roas, calculadora roi, rentabilidad ads, growth marketing, roi ads, roas ads';
 
 const t = {
-  heroTitle: isCa ? 'Toma el control de tu rentabilidad en Ads' : 'Toma el control de tu rentabilidad en Ads',
+  heroTitle: isCa ? 'Pren el control de la teva rendibilitat en Ads' : 'Toma el control de tu rentabilidad en Ads',
   heroSubtitle: isCa ? 'Calcula en segons el ROAS, ROI i breakeven de les teves campanyes de Growth Marketing amb precisió professional.' : 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.',
-  cta: isCa ? 'Empieza a calcular' : 'Empieza a calcular',
+  cta: isCa ? 'Comença a calcular' : 'Empieza a calcular',
   features: [
     { title: isCa ? 'Càlculs en temps real' : 'Cálculos en tiempo real', desc: isCa ? 'Veus els resultats a l\'instant.' : 'Mira los resultados al instante.' },
     { title: isCa ? 'Gràfics interactius' : 'Gráficos interactivos', desc: isCa ? 'Visualitza el teu punt d\'equilibri.' : 'Visualiza tu punto de equilibrio.' },
@@ -28,7 +28,7 @@ const t = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "ROAS & ROI Business Calculator",
+  "name": "Ads Calculator - ROAS & ROI Business Tool",
   "operatingSystem": "All",
   "applicationCategory": "BusinessApplication",
   "description": description,
@@ -48,6 +48,12 @@ const jsonLd = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`https://adscalculator.app/${lang}`} />
+    <link rel="alternate" hreflang="es" href="https://adscalculator.app/" />
+    <link rel="alternate" hreflang="ca" href="https://adscalculator.app/ca" />
+    <link rel="alternate" hreflang="x-default" href="https://adscalculator.app/" />
     
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
@@ -58,7 +64,7 @@ const jsonLd = {
           <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
           </div>
-          Growth<span class="text-blue-600 italic">Calc</span>
+          Ads <span class="text-blue-600 italic">Calculator</span>
         </div>
         <nav class="flex gap-6 items-center">
           <a href={isCa ? "/ca/blog" : "/blog"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">
@@ -80,7 +86,7 @@ const jsonLd = {
             {isCa ? 'Eina Gratuïta' : 'Herramienta Gratuita'}
           </span>
           <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-            {isCa ? 'Pren el control de la teva' : 'Toma el control de tu'} <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400 font-extrabold italic">{isCa ? 'rendibilitat' : 'rentabilidad'}</span> {isCa ? 'en Ads' : 'en Ads'}
+            {t.heroTitle}
           </h1>
           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {t.heroSubtitle}
@@ -123,9 +129,9 @@ const jsonLd = {
               <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
               </div>
-              Growth<span class="text-blue-600 italic">Calc</span>
+              Ads <span class="text-blue-600 italic">Calculator</span>
            </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 GrowthCalc. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
         </div>
         <div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href="#" class="hover:text-blue-600 transition-colors">Twitter</a>
