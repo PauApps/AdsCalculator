@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  // Specifically filter for Spanish entries for the root /blog
+  const spanishEntries = blogEntries.filter(entry => entry.slug.startsWith('es/'));
+  
+  return spanishEntries.map(entry => {
+    // entry.slug includes "es/" prefix
+    const slug = entry.slug.replace('es/', '');
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const lang = 'es';
+const isCa = false;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{entry.data.title} | GrowthCalc</title>
+    <meta name="viewport" content="width=device-width" />
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: #f8fafc;
+      }
+      .prose {
+        max-width: 70ch;
+        color: #334155;
+        line-height: 1.8;
+      }
+      .dark .prose {
+        color: #cbd5e1;
+      }
+      .prose h1, .prose h2, .prose h3 {
+        color: #0f172a;
+        font-weight: 800;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.025em;
+      }
+      .dark .prose h1, .dark .prose h2, .dark .prose h3 {
+        color: #f1f5f9;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 p-6">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <a href="/" class="font-bold text-2xl tracking-tight">Growth<span class="text-blue-600 italic">Calc</span></a>
+        <a href="/blog" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-xl">← Volver al Blog</a>
+      </div>
+    </header>
+
+    <main class="flex-grow py-16 px-6">
+      <article class="max-w-3xl mx-auto">
+        <header class="mb-12 text-center">
+             <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900 dark:text-white leading-tight">{entry.data.title}</h1>
+             <p class="text-xl text-slate-500 dark:text-slate-400 italic max-w-2xl mx-auto">{entry.data.description}</p>
+        </header>
+        <div class="prose dark:prose-invert mx-auto border-t border-slate-100 dark:border-slate-900 pt-10">
+            <Content />
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 text-center text-slate-500 text-sm">
+        <p>© 2026 GrowthCalc. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

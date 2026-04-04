@@ -3,10 +3,13 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => {
-    // entry.slug includes language prefix (e.g. "es/que-es-el-roas")
-    const lang = entry.slug.split('/')[0];
-    const slug = entry.slug.split('/').slice(1).join('/');
+  // Specifically filter for Catalan entries for the /ca/blog
+  const catalanEntries = blogEntries.filter(entry => entry.slug.startsWith('ca/'));
+  
+  return catalanEntries.map(entry => {
+    // entry.slug includes "ca/" prefix
+    const slug = entry.slug.replace('ca/', '');
+    const lang = 'ca';
     return {
       params: { lang, slug },
       props: { entry },
