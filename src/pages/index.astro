@@ -1,27 +1,18 @@
 ---
-import Calculator from '../../components/Calculator';
+import Calculator from '../components/Calculator';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'ca' } },
-  ];
-}
-
-const { lang } = Astro.params;
-
-const isCa = lang === 'ca';
-const title = isCa ? 'Calculadora de ROAS & ROI - Eina de Growth Marketing' : 'Calculadora de ROAS & ROI - Herramienta de Growth Marketing';
-const description = isCa ? 'Calcula el ROAS, ROI, CPA i marge de les teves campanyes publicitàries amb precisió i gràfics en temps real.' : 'Calcula el ROAS, ROI, CPA y margen de tus campañas publicitarias con precisión y gráficos en tiempo real.';
+const lang = 'es';
+const isCa = false;
+const title = 'Calculadora de ROAS & ROI - Herramienta de Growth Marketing';
+const description = 'Calcula el ROAS, ROI, CPA y margen de tus campañas publicitarias con precisión y gráficos en tiempo real.';
 
 const t = {
-  heroTitle: isCa ? 'Toma el control de tu rentabilidad en Ads' : 'Toma el control de tu rentabilidad en Ads',
-  heroSubtitle: isCa ? 'Calcula en segons el ROAS, ROI i breakeven de les teves campanyes de Growth Marketing amb precisió professional.' : 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.',
-  cta: isCa ? 'Empieza a calcular' : 'Empieza a calcular',
+  heroSubtitle: 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.',
+  cta: 'Empieza a calcular',
   features: [
-    { title: isCa ? 'Càlculs en temps real' : 'Cálculos en tiempo real', desc: isCa ? 'Veus els resultats a l\'instant.' : 'Mira los resultados al instante.' },
-    { title: isCa ? 'Gràfics interactius' : 'Gráficos interactivos', desc: isCa ? 'Visualitza el teu punt d\'equilibri.' : 'Visualiza tu punto de equilibrio.' },
-    { title: isCa ? 'Privadesa Total' : 'Privacidad Total', desc: isCa ? 'Les teves dades no surten del navegador.' : 'Tus datos no salen del navegador.' }
+    { title: 'Cálculos en tiempo real', desc: 'Mira los resultados al instante.' },
+    { title: 'Gráficos interactivos', desc: 'Visualiza tu punto de equilibrio.' },
+    { title: 'Privacidad Total', desc: 'Tus datos no salen del navegador.' }
   ]
 };
 
@@ -111,12 +102,12 @@ const jsonLd = {
           Growth<span class="text-primary italic">Calc</span>
         </div>
         <nav class="flex gap-6 items-center">
-          <a href={`/${lang}/blog`} class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+          <a href="/es/blog" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
             Blog
           </a>
           <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-6">
-            <a href="/es" class={`px-2 py-1 rounded-md transition-all ${!isCa ? 'bg-primary text-white shadow-lg shadow-primary/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>ES</a>
-            <a href="/ca" class={`px-2 py-1 rounded-md transition-all ${isCa ? 'bg-primary text-white shadow-lg shadow-primary/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>CA</a>
+            <a href="/es" class="px-2 py-1 rounded-md transition-all bg-primary text-white shadow-lg shadow-primary/25">ES</a>
+            <a href="/ca" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">CA</a>
           </div>
         </nav>
       </div>
@@ -127,10 +118,10 @@ const jsonLd = {
       <section class="pt-20 pb-12 px-6">
         <div class="max-w-4xl mx-auto text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold tracking-wide uppercase">
-            {isCa ? 'Eina Gratuïta' : 'Herramienta Gratuita'}
+            Herramienta Gratuita
           </span>
           <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-            {isCa ? 'Pren el control de la teva' : 'Toma el control de tu'} <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400 font-extrabold italic">{isCa ? 'rendibilitat' : 'rentabilidad'}</span> {isCa ? 'en Ads' : 'en Ads'}
+            Toma el control de tu <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400 font-extrabold italic">rentabilidad</span> en Ads
           </h1>
           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {t.heroSubtitle}
@@ -160,7 +151,7 @@ const jsonLd = {
       <section id="calculator" class="py-20 px-6 scroll-mt-24">
         <div class="max-w-6xl mx-auto">
           <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-white/5 overflow-hidden ring-1 ring-black/5">
-             <Calculator client:load lang={lang as 'es' | 'ca'} />
+             <Calculator client:load lang={lang} />
           </div>
         </div>
       </section>
@@ -175,15 +166,14 @@ const jsonLd = {
               </div>
               Growth<span class="text-primary italic">Calc</span>
            </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 GrowthCalc. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 GrowthCalc. Todos los derechos reservados.</p>
         </div>
         <div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href="#" class="hover:text-primary transition-colors">Twitter</a>
            <a href="#" class="hover:text-primary transition-colors">LinkedIn</a>
-           <a href={`/${lang}/blog`} class="hover:text-primary transition-colors">Blog</a>
+           <a href="/es/blog" class="hover:text-primary transition-colors">Blog</a>
         </div>
       </div>
     </footer>
   </body>
 </html>
-
