@@ -6,12 +6,12 @@ export default {
     extend: {
         colors: {
             primary: {
-                DEFAULT: 'var(--primary)',
-                foreground: 'var(--primary-foreground)',
+                DEFAULT: '#2563eb', // Brand Blue (Hardcoded for production reliability)
+                foreground: '#ffffff',
             },
         },
         fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
         }
     },
   },
