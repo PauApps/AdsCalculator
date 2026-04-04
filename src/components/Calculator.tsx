@@ -162,7 +162,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
   return (
     <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 font-sans">
       <div className="flex items-center gap-3 mb-8">
-        <div className="p-3 bg-primary rounded-lg shadow-sm text-white">
+        <div className="p-3 bg-blue-600 rounded-lg shadow-sm text-white">
           <CalcIcon size={24} />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">{t.title}</h1>
@@ -175,7 +175,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
           {/* Investment Data */}
           <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
             <h2 className="text-xl font-semibold mb-5 text-gray-800 dark:text-gray-100 flex items-center gap-2">
-              <TrendingUp size={20} className="text-primary" />
+              <TrendingUp size={20} className="text-blue-600" />
               {t.investment}
             </h2>
             <div className="space-y-4">
@@ -185,7 +185,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                   type="number" 
                   value={adSpend} 
                   onChange={(e) => setAdSpend(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-gray-50 dark:bg-gray-700 dark:text-white transition-all outline-none"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white transition-all outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -195,7 +195,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                     type="number" 
                     value={clicks} 
                     onChange={(e) => setClicks(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
                 </div>
                 <div>
@@ -204,7 +204,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                     type="number" 
                     value={conversions} 
                     onChange={(e) => setConversions(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                     type="number" 
                     value={cogs} 
                     onChange={(e) => setCogs(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
                 </div>
                 <div>
@@ -239,7 +239,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                   <select
                     value={taxPercent}
                     onChange={(e) => setTaxPercent(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
+                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   >
                     <option value={0}>0%</option>
                     <option value={4}>4%</option>
@@ -269,8 +269,8 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
               
               {/* ROAS */}
-              <div className="p-4 rounded-xl bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30">
-                <p className="text-sm font-medium text-primary dark:text-primary mb-1">{t.roas}</p>
+              <div className="p-4 rounded-xl bg-blue-600/10 dark:bg-blue-600/20 border border-blue-600/20 dark:border-blue-600/30">
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-600 mb-1">{t.roas}</p>
                 <p className={`text-3xl font-bold ${Number(calculations.roas) >= Number(calculations.breakevenRoas) ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                   {calculations.roas}x
                 </p>
@@ -347,7 +347,7 @@ export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
                       contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                       labelFormatter={(label) => `${label} ${t.unitsSold}`}
                     />
-                    <ReferenceLine x={conversions} stroke="var(--primary)" strokeDasharray="3 3" label={{ position: 'top', value: 'Actual', fill: 'var(--primary)', fontSize: 12 }} />
+                    <ReferenceLine x={conversions} stroke="#2563eb" strokeDasharray="3 3" label={{ position: 'top', value: 'Actual', fill: '#2563eb', fontSize: 12 }} />
                     <ReferenceLine y={0} stroke="#9ca3af" />
                     <Area type="monotone" dataKey="costs" name={t.chartCosts} stroke="#ef4444" fillOpacity={1} fill="url(#colorCosts)" />
                     <Area type="monotone" dataKey="profit" name={t.chartProfit} stroke="#10b981" fillOpacity={1} fill="url(#colorProfit)" />
