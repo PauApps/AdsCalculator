@@ -1,5 +1,6 @@
 ---
 import Calculator from '../../components/Calculator';
+import '../../styles/global.css';
 
 export function getStaticPaths() {
   return [
@@ -49,7 +50,6 @@ const jsonLd = {
     <meta name="description" content={description} />
     
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    <link rel="stylesheet" href="../../styles/global.css" />
   </head>
   <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
     <header class="glass sticky top-0 z-50 w-full px-6 py-4">

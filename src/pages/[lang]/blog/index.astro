@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import '../../../styles/global.css';
 
 export function getStaticPaths() {
   return [
@@ -22,7 +23,6 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
     <meta charset="utf-8" />
     <title>{title} | GrowthCalc</title>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../../styles/global.css" />
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
