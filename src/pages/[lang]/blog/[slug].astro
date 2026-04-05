@@ -57,8 +57,8 @@ const isCa = lang === 'ca';
     <!-- End Google Tag Manager (noscript) -->
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href={`/${lang}`} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href={`/${lang}/blog`} class="text-sm font-medium hover:text-blue-600 transition-colors">← {isCa ? 'Tornar al Blog' : 'Volver al Blog'}</a>
+        <a href={`/${lang}`} title={isCa ? "Tornar a la pàgina principal" : "Volver a la página principal"} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
+        <a href={`/${lang}/blog`} title={isCa ? "Veure tots els articles del blog" : "Ver todos los artículos del blog"} class="text-sm font-medium hover:text-blue-600 transition-colors">← {isCa ? 'Tornar al Blog' : 'Volver al Blog'}</a>
       </div>
     </header>
 

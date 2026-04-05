@@ -44,8 +44,8 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
     <!-- End Google Tag Manager (noscript) -->
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/" class="text-sm font-medium hover:text-blue-600 transition-colors border px-3 py-1 rounded-lg">Volver a Calculadora</a>
+        <a href="/" title="Ir a la página principal" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
+        <a href="/" title="Volver a la calculadora" class="text-sm font-medium hover:text-blue-600 transition-colors border px-3 py-1 rounded-lg">Volver a Calculadora</a>
       </div>
     </header>
 
@@ -59,7 +59,7 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
           {posts.map(post => {
              const cleanSlug = post.slug.startsWith('es/') ? post.slug.replace('es/', '') : post.slug;
              return (
-               <a href={`/blog/${cleanSlug}`} class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all hover:scale-[1.01]">
+               <a href={`/blog/${cleanSlug}`} title={`Leer el artículo: ${post.data.title}`} class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all hover:scale-[1.01]">
                  <h2 class="text-2xl font-bold mb-2">{post.data.title}</h2>
                  <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">{post.data.description}</p>
                  <span class="text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider">Leer más →</span>
