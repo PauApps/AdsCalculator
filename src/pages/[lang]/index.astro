@@ -14,22 +14,22 @@ const isEs = lang === 'es';
 const isCa = lang === 'ca';
 
 const title = isCa 
-  ? 'Ads Calculator | Calculadora ROAS & ROI Professional' 
+  ? 'Calculadora ROAS Gratis i ROI Màrqueting | Ads Calculator' 
   : isEs 
-    ? 'Ads Calculator | Calculadora ROAS & ROI Profesional'
-    : 'Ads Calculator | Professional ROAS & ROI Calculator';
+    ? 'Calculadora ROAS Gratis y ROI Marketing | Ads Calculator'
+    : 'Free ROAS Calculator & ROI Marketing Profit Tool';
 
 const description = isCa 
-  ? 'Calcula ROAS, ROI i breakeven dels teus Ads. Mesura el benefici real amb gràfics interactius.' 
+  ? 'Utilitza la nostra calculadora ROAS gratis per calcular el ROI en màrqueting, punt d\'equilibri i benefici brut. La millor profit ads calculator.' 
   : isEs
-    ? 'Calcula ROAS, ROI y breakeven de tus Ads. Mide el beneficio real con gráficos interactivos.'
-    : 'Calculate ROAS, ROI and breakeven of your Ads. Measure real profit with interactive charts.';
+    ? 'Usa nuestra calculadora ROAS gratis para calcular el ROI en marketing, punto de equilibrio y beneficio bruto. La mejor profit ads calculator online.'
+    : 'Use our free ROAS calculator to calculate ROI marketing, breakeven, and gross profit. The ultimate profit ads calculator with interactive charts.';
 
 const keywords = isCa 
-  ? 'calculadora ads, calculadora roas, calculadora roi, rendibilitat ads, growth marketing, roi ads, roas ads' 
+  ? 'calculadora roas gratis, calculadora roi marketing, profit ads calculator, roi ads, roas ads, growth marketing' 
   : isEs
-    ? 'calculadora ads, calculadora roas, calculadora roi, rentabilidad ads, growth marketing, roi ads, roas ads'
-    : 'ads calculator, roas calculator, roi calculator, ads profitability, growth marketing, ads roi, ads roas';
+    ? 'calculadora roas gratis, calculadora roi marketing, profit ads calculator, roi ads, roas ads, growth marketing'
+    : 'free roas calculator, marketing roi calculator, profit ads calculator, ads profitability, growth marketing, ads roi, ads roas';
 
 const t = {
   heroTitle: isCa 
@@ -180,23 +180,139 @@ const jsonLd = {
           </div>
         </div>
       </section>
+
+      <!-- ADSENSE PLACEHOLDER -->
+      <section class="max-w-4xl mx-auto px-6 py-4">
+        <div id="adsense-container" class="w-full min-h-[90px] bg-black/5 dark:bg-white/5 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-center text-sm text-gray-500 font-medium">
+          <!-- TODO: Insert Google AdSense code here -->
+           {isCa ? 'Espai Publicitari' : isEs ? 'Espacio Publicitario' : 'Advertisement Space'}
+        </div>
+      </section>
+
+      <!-- SEO CONTENT -->
+      <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto prose dark:prose-invert prose-blue prose-headings:font-bold prose-h2:text-3xl prose-h3:text-xl">
+          {isCa ? (
+            <>
+              <h2>Per què calcular la rendibilitat dels teus Ads és crucial?</h2>
+              <p>
+                Llançar campanyes de publicitat digital sense mesurar el benefici real és el camí més ràpid per perdre el teu pressupost. En performance i growth marketing, conèixer els teus marges exactes, el teu punt d'equilibri i el teu Retorn de la Inversió (ROI) real no és negociable.
+                Aquesta <strong class="font-semibold text-blue-600 dark:text-blue-400">profit ads calculator</strong> t'ajuda a anar més enllà de les mètriques superficials i entendre exactament quants diners fa el teu negoci una vegada deduïts tots els fons.
+              </p>
+
+              <h3>Què és el ROAS i com es calcula?</h3>
+              <p>
+                El <strong>ROAS</strong> (Return on Ad Spend) mesura els ingressos bruts generats per cada euro invertit en publicitat. És la mètrica més habitual dins de plataformes com Facebook Ads o Google Ads.
+              </p>
+              <p>
+                La fórmula és simple: <code>ROAS = Ingressos Totals / Inversió en Ads</code>.
+                Encara que un ROAS de 3x o 4x soni genial, només explica la meitat de la història. El ROAS no té en compte el cost del producte, l'enviament ni els impostos, per la qual cosa dependre exclusivament d'ell pot ser perillós per a negocis d'ecommerce i SaaS.
+              </p>
+
+              <h3>Com entendre el ROI real (incloent COGS i IVA)</h3>
+              <p>
+                A diferència del ROAS, el <strong>ROI</strong> (Retorn de la Inversió) et dóna una imatge completa de la teva rendibilitat. Per calcular el teu <em>marketing ROI</em> real, has de restar el <strong>COGS</strong> (Cost dels Béns Venguts) i els impostos (com l'IVA) dels teus ingressos.
+              </p>
+              <p>
+                Un ROAS alt pot encobrir un ROI negatiu si els teus costos de producte i impostos són molt alts. La nostra <strong class="font-semibold text-blue-600 dark:text-blue-400">calculadora ROAS gratis</strong> incorpora automàticament el teu preu de venda, costos unitaris i impostos perquè puguis veure el teu Benefici Net real i el CPA (Cost Per Adquisició).
+              </p>
+
+              <h3>Què significa el punt d'equilibri (Breakeven)?</h3>
+              <p>
+                El teu <strong>ROAS de punt d'equilibri</strong> (Breakeven ROAS) és el multiplicador exacte que necessites assolir en els teus anuncis per cobrir les teves despeses sense perdre diners. Si el teu ROAS real és menor, estàs perdent diners. Si és major, estàs generant pur benefici.
+              </p>
+              <p>
+                En conèixer el teu punt d'equilibri, pots escalar amb confiança les campanyes guanyadores i pausar les perdedores abans que consumeixin el teu pressupost.
+              </p>
+            </>
+          ) : isEs ? (
+            <>
+              <h2>¿Por qué calcular la rentabilidad de tus Ads es crucial?</h2>
+              <p>
+                Lanzar campañas de publicidad digital sin medir el beneficio real es el camino más rápido para perder tu presupuesto. En performance y growth marketing, conocer tus márgenes exactos, tu punto de equilibrio y tu Retorno de la Inversión (ROI) real no es negociable.
+                Esta <strong class="font-semibold text-blue-600 dark:text-blue-400">profit ads calculator</strong> te ayuda a ir más allá de las métricas superficials y entender exactamente cuánto dinero hace tu negocio una vez deducidos todos los gastos.
+              </p>
+
+              <h3>¿Qué es el ROAS y cómo se calcula?</h3>
+              <p>
+                El <strong>ROAS</strong> (Return on Ad Spend) mide los ingresos brutos generados por cada euro invertido en publicidad. Es la métrica más habitual dentro de plataformas como Facebook Ads o Google Ads.
+              </p>
+              <p>
+                La fórmula es simple: <code>ROAS = Ingresos Totales / Inversión en Ads</code>.
+                Aunque un ROAS de 3x o 4x suene genial, solo cuenta la mitad de la historia. El ROAS no tiene en cuenta el coste del producto, el envío ni los impuestos, por lo que depender exclusivamente de él puede ser peligroso para negocios de ecommerce y SaaS.
+              </p>
+
+              <h3>Cómo entender el ROI real (incluyendo COGS e IVA)</h3>
+              <p>
+                A diferencia del ROAS, el <strong>ROI</strong> (Retorno de la Inversión) te da una imagen completa de tu rentabilidad. Para calcular tu <em>marketing ROI</em> real, debes restar el <strong>COGS</strong> (Coste de los Bienes Vendidos) y los impuestos (como el IVA) de tus ingresos.
+              </p>
+              <p>
+                Un ROAS alto puede encubrir un ROI negativo si tus costes de producto e impuestos son muy altos. Nuestra <strong class="font-semibold text-blue-600 dark:text-blue-400">calculadora ROAS gratis</strong> incorpora automáticamente tu precio de venta, costes unitarios e impuestos para que puedas ver tu Beneficio Neto real y el CPA (Coste Por Adquisición).
+              </p>
+
+              <h3>¿Qué significa el punto de equilibrio (Breakeven)?</h3>
+              <p>
+                Tu <strong>ROAS de punto de equilibrio</strong> (Breakeven ROAS) es el multiplicador exacto que necesitas alcanzar en tus anuncios para cubrir tus gastos sin perder dinero. Si tu ROAS real es menor, estás perdiendo dinero. Si es mayor, estás generando puro beneficio.
+              </p>
+              <p>
+                Al conocer tu punto de equilibrio, puedes escalar con confianza las campañas ganadoras y pausar las perdedores antes de que consuman tu presupuesto.
+              </p>
+            </>
+          ) : (
+            <>
+              <h2>Why calculating your Ads profitability is crucial?</h2>
+              <p>
+                Running digital advertising campaigns without tracking your actual profit is a fast track to burning your budget. In performance and growth marketing, knowing your exact margins, your breakeven point, and your real Return on Investment (ROI) is non-negotiable. 
+                This <strong class="font-semibold text-blue-600 dark:text-blue-400">profit ads calculator</strong> helps you move beyond vanity metrics and understand exactly how much money your business is making after all costs are deducted.
+              </p>
+
+              <h3>What is ROAS and how is it calculated?</h3>
+              <p>
+                <strong>ROAS</strong> (Return on Ad Spend) measures the gross revenue generated for every dollar spent on advertising. It's the most common metric used inside ad platforms like Facebook Ads or Google Ads. 
+              </p>
+              <p>
+                The formula is simple: <code>ROAS = Total Revenue / Ad Spend</code>. 
+                While a 3x or 4x ROAS might sound great, it only tells half the story. ROAS does not account for product costs, shipping, or taxes, which is why relying solely on it can be dangerous for ecommerce and SaaS businesses.
+              </p>
+
+              <h3>Understanding real ROI (including COGS and VAT)</h3>
+              <p>
+                Unlike ROAS, <strong>ROI</strong> (Return on Investment) gives you a complete picture of your profitability. To calculate your real <em>marketing ROI</em>, you must subtract the <strong>COGS</strong> (Cost of Goods Sold) and taxes (like VAT or sales tax) from your revenue.
+              </p>
+              <p>
+                A high ROAS can actually mask a negative ROI if your product costs and taxes are too high. Our <strong class="font-semibold text-blue-600 dark:text-blue-400">free ROAS calculator</strong> automatically factors in your sale price, unit costs, and tax rate so you can see your true Net Profit and CPA (Cost Per Acquisition).
+              </p>
+
+              <h3>What does the Breakeven point mean?</h3>
+              <p>
+                Your <strong>Breakeven ROAS</strong> is the exact multiplier you need to hit on your ads just to cover all your expenses without losing money. If your actual ROAS is lower than your Breakeven ROAS, your ad campaigns are bleeding money. If it's higher, you are generating pure profit.
+              </p>
+              <p>
+                By knowing your breakeven point, you can confidently scale your winning campaigns and kill the losing ones before they drain your bank account.
+              </p>
+            </>
+          )}
+        </div>
+      </section>
     </main>
 
     <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div>
-           <div class="font-bold text-xl mb-2 flex items-center gap-2">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
               <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
               </div>
               Ads <span class="text-blue-600 italic">Calculator</span>
            </div>
            <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : isEs ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:hello@adsroicalc.com" class="hover:text-blue-600 transition-colors">hello@adsroicalc.com</a></p>
         </div>
-        <div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
-           <a href="#" title={isCa ? "Seguir a Twitter" : isEs ? "Seguir en Twitter" : "Follow on Twitter"} class="hover:text-blue-600 transition-colors">Twitter</a>
-           <a href="#" title={isCa ? "Seguir a LinkedIn" : isEs ? "Seguir en LinkedIn" : "Follow on LinkedIn"} class="hover:text-blue-600 transition-colors">LinkedIn</a>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href={isCa ? "/ca/blog" : isEs ? "/es/blog" : "/blog"} title={isCa ? "Veure tots els articles del blog" : isEs ? "Ver todos los artículos del blog" : "See all blog posts"} class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href="/privacy" title={isCa ? "Política de Privacitat" : isEs ? "Política de Privacidad" : "Privacy Policy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : isEs ? 'Privacidad' : 'Privacy'}</a>
+           <a href="/legal" title={isCa ? "Avís Legal" : isEs ? "Aviso Legal" : "Legal Notice"} class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href="/cookies" title={isCa ? "Política de Cookies" : isEs ? "Política de Cookies" : "Cookie Policy"} class="hover:text-blue-600 transition-colors">Cookies</a>
         </div>
       </div>
   </body>
