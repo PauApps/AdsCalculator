@@ -3,6 +3,7 @@ title: "Què és el ROAS i per què és vital per al teu Ecommerce?"
 description: "Aprèn a calcular el Retorn de la Inversió Publicitària i com optimitzar-lo per maximitzar els teus beneficis."
 date: 2026-04-04
 author: "Growth Expert"
+keywords: "roas, que es el roas català, calculadora ads, inversio publicitaria, retorn inversio"
 ---
 
 El **ROAS** (Return on Ad Spend) és una de les mètriques més importants en el màrqueting digital. Es calcula dividint els ingressos totals generats per la inversió publicitària.

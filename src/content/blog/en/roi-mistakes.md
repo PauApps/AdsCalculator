@@ -3,6 +3,7 @@ title: "5 common mistakes when measuring ROI in Ads"
 description: "Is your ROI actually accurate? Learn the top 5 mistakes marketers make when calculating ad profitability."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "roi errors, roi mistakes, ads profitability, measuring roi, marketing metrics"
 ---
 
 Calculating **ROI** (Return on Investment) seems simple, but many businesses are getting it wrong. Here are 5 common mistakes:

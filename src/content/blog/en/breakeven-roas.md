@@ -3,6 +3,7 @@ title: "How to calculate your Breakeven ROAS: The ultimate guide"
 description: "Discover how to identify the exact point where your ads start making money. Stop losing budget today."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "breakeven roas, roas calculator, profitability, ecommerce ads, break even point"
 ---
 
 Understanding your **Breakeven ROAS** is the difference between a profitable business and one that loses money on every sale.

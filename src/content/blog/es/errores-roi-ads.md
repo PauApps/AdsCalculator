@@ -3,6 +3,7 @@ title: "5 errores comunes al medir el ROI en Ads"
 description: "¿Es tu ROI realmente preciso? Aprende los 5 errores más comunes que cometen los marketers al calcular la rentabilidad."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "errores roi, rentabilidad ads, errores marketing, calcular roi, metricas ads"
 ---
 
 Calcular el **ROI** (Retorno de la Inversión) parece sencillo, pero muchos negocios se equivocan. Estos son los 5 errores más comunes:

@@ -3,6 +3,7 @@ title: "Cómo calcular tu ROAS de punto de equilibrio: Guía definitiva"
 description: "Descubre cómo identificar el punto exacto donde tus anuncios empiezan a ser rentables. Deja de perder presupuesto hoy."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "roas breakeven, punto de equilibrio, rentabilidad ads, calculadora roas, margen de beneficio"
 ---
 
 Conocer tu **ROAS de Punto de Equilibrio** (Breakeven ROAS) es la diferencia entre un negocio próspero y uno que pierde dinero en cada venta.

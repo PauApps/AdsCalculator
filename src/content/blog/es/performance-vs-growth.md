@@ -3,6 +3,7 @@ title: "Performance vs Growth Marketing: ¿Cuál es la verdadera diferencia?"
 description: "¿Confundido entre estos dos términos? Desgranamos las diferencias y te ayudamos a decidir qué estrategia necesita tu negocio."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "performance marketing, growth marketing, estrategia marketing, roi ads, crecimiento negocio"
 ---
 
 El mundo del marketing está lleno de palabras de moda. Dos de las más comunes son **Performance Marketing** y **Growth Marketing**. Aunque comparten similitudes, requieren enfoques diferentes.

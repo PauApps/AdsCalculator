@@ -25,6 +25,16 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Ads Calculator</title>
+    <meta name="description" content={isCa ? "Descobreix les millors estratègies de Growth Marketing, càlcul de ROI i optimització d'Ads al nostre blog." : "Descubre las mejores estrategias de Growth Marketing, cálculo de ROI y optimización de Ads en nuestro blog."} />
+    <meta name="keywords" content={isCa ? "blog growth marketing, ads calculator blog, roas català, càlcul roi" : "blog growth marketing, ads calculator blog, roas estrategias, calculo roi"} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`https://adsroicalc.com/${lang}/blog`} />
+    
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/blog" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/blog" />
+    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/blog" />
+    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/blog" />
+
     <meta name="viewport" content="width=device-width" />
 
     <!-- Google tag (gtag.js) -->

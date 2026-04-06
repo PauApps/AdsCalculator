@@ -3,6 +3,7 @@ title: "Com calcular el teu ROAS de punt d'equilibri: Guia definitiva"
 description: "Descobreix com identificar el punt exacte on els teus anuncis comencen a ser rendibles. Deixa de perdre pressupost avui."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "roas breakeven, punt d'equilibri, rendibilitat ads, calculadora roas, marge de benefici"
 ---
 
 Conèixer el teu **ROAS de Punt d'Equilibri** (Breakeven ROAS) és la diferència entre un negoci pròsper i un que perd diners a cada venda.

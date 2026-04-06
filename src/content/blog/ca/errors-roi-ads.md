@@ -3,6 +3,7 @@ title: "5 errors comuns en mesurar el ROI en Ads"
 description: "És el teu ROI realment precís? Aprèn els 5 errors més comuns que cometen els marketers en calcular la rendibilitat."
 date: 2026-04-06
 author: "Ads Calculator Team"
+keywords: "errors roi, rendibilitat ads, errors màrqueting, calcular roi, mètriques ads"
 ---
 
 Calcular el **ROI** (Retorn de la Inversió) sembla senzill, però molts negocis s'equivoquen. Aquests són els 5 errors més comuns:
