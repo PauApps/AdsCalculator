@@ -12,12 +12,21 @@ const pages = [
   '/blog',
   '/es/blog',
   '/ca/blog',
+  // English Blog Posts
   '/blog/what-is-roas',
   '/blog/breakeven-roas',
   '/blog/performance-vs-growth',
   '/blog/roi-mistakes',
+  // Spanish Blog Posts
   '/es/blog/que-es-el-roas',
-  '/ca/blog/que-es-el-roas'
+  '/es/blog/roas-de-punto-de-equilibrio',
+  '/es/blog/performance-vs-growth',
+  '/es/blog/errores-roi-ads',
+  // Catalan Blog Posts
+  '/ca/blog/que-es-el-roas',
+  '/ca/blog/roas-de-punt-de-equilibri',
+  '/ca/blog/performance-vs-growth',
+  '/ca/blog/errors-roi-ads'
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
