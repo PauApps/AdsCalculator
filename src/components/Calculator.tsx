@@ -98,7 +98,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
   const [adSpend, setAdSpend] = useState<number>(1000);
   const [clicks, setClicks] = useState<number>(500);
   const [conversions, setConversions] = useState<number>(50);
-  
+
   const [salePrice, setSalePrice] = useState<number>(50);
   const [cogs, setCogs] = useState<number>(15);
   const [taxPercent, setTaxPercent] = useState<number>(21);
@@ -134,13 +134,14 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
     const totalNetProfit = netRevenue - totalCosts;
 
     const roas = adSpend > 0 ? totalRevenue / adSpend : 0;
-    const roi = totalCosts > 0 ? (totalNetProfit / totalCosts) * 100 : 0;
+    // Marketing ROI measures net return specifically against the advertising investment.
+    const roi = adSpend > 0 ? (totalNetProfit / adSpend) * 100 : 0;
     const cpa = conversions > 0 ? adSpend / conversions : 0;
-    
+
     // Breakeven ROAS = 1 / Net Margin %. 
     // Net Margin % (gross margin actually before ads) = (Net Sale Price - COGS) / Sale Price.
     // Breakeven ROAS basically tells us how much revenue we need per € spent on ads to break even.
-    const productMargin = (netSalePrice - cogs) / salePrice; 
+    const productMargin = (netSalePrice - cogs) / salePrice;
     const breakevenRoas = productMargin > 0 ? 1 / productMargin : 0;
 
     return {
@@ -208,7 +209,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* FORM SECTION */}
         <div className="lg:col-span-4 space-y-8">
-          
+
           {/* Investment Data */}
           <div className="bg-white dark:bg-gray-800 p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
             <h2 className="text-xl font-semibold mb-5 text-gray-800 dark:text-gray-100 flex items-center gap-2">
@@ -218,28 +219,28 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.adSpend}</label>
-                <input 
-                  type="number" 
-                  value={adSpend} 
+                <input
+                  type="number"
+                  value={adSpend}
                   onChange={(e) => setAdSpend(Number(e.target.value))}
-                    className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white transition-all outline-none"
+                  className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white transition-all outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.clicks}</label>
-                  <input 
-                    type="number" 
-                    value={clicks} 
+                  <input
+                    type="number"
+                    value={clicks}
                     onChange={(e) => setClicks(Number(e.target.value))}
                     className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.conversions}</label>
-                  <input 
-                    type="number" 
-                    value={conversions} 
+                  <input
+                    type="number"
+                    value={conversions}
                     onChange={(e) => setConversions(Number(e.target.value))}
                     className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
@@ -254,9 +255,9 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.salePrice}</label>
-                <input 
-                  type="number" 
-                  value={salePrice} 
+                <input
+                  type="number"
+                  value={salePrice}
                   onChange={(e) => setSalePrice(Number(e.target.value))}
                   className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                 />
@@ -264,9 +265,9 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.cogs}</label>
-                  <input 
-                    type="number" 
-                    value={cogs} 
+                  <input
+                    type="number"
+                    value={cogs}
                     onChange={(e) => setCogs(Number(e.target.value))}
                     className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                   />
@@ -300,9 +301,9 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
 
         {/* RESULTS SECTION */}
         <div className="lg:col-span-8 flex flex-col gap-6">
-          
+
           <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
-            <button 
+            <button
               onClick={handleCopy}
               className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors flex items-center gap-2 text-sm font-medium"
               title={t.copy}
@@ -310,9 +311,9 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
               {copied ? <span className="text-green-500">{t.copied}</span> : <><Copy size={18} /> <span className="hidden sm:inline">{t.copy}</span></>}
             </button>
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{t.results}</h2>
-            
+
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              
+
               {/* ROAS */}
               <div className="p-4 rounded-xl bg-blue-600/10 dark:bg-blue-600/20 border border-blue-600/20 dark:border-blue-600/30">
                 <p className="text-sm font-medium text-blue-600 dark:text-blue-600 mb-1">{t.roas}</p>
@@ -359,46 +360,46 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
 
           {/* CHART SECTION */}
           <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex-1 min-h-[350px]">
-             <h3 className="text-lg font-semibold mb-6 text-gray-800 dark:text-gray-100">{t.chartTitle}</h3>
-             
-             <div className="w-full h-[280px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={chartData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-                    <defs>
-                      <linearGradient id="colorProfit" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
-                      </linearGradient>
-                      <linearGradient id="colorCosts" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" className="dark:stroke-gray-700" />
-                    <XAxis 
-                      dataKey="units" 
-                      tickLine={false} 
-                      axisLine={false}
-                      className="text-xs text-gray-500"
-                      tickFormatter={(value) => `${value} u.`}
-                    />
-                    <YAxis 
-                      tickLine={false} 
-                      axisLine={false}
-                      className="text-xs text-gray-500"
-                      tickFormatter={(value) => `${value}€`}
-                    />
-                    <Tooltip 
-                      contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                      labelFormatter={(label) => `${label} ${t.unitsSold}`}
-                    />
-                    <ReferenceLine x={conversions} stroke="#2563eb" strokeDasharray="3 3" label={{ position: 'top', value: 'Actual', fill: '#2563eb', fontSize: 12 }} />
-                    <ReferenceLine y={0} stroke="#9ca3af" />
-                    <Area type="monotone" dataKey="costs" name={t.chartCosts} stroke="#ef4444" fillOpacity={1} fill="url(#colorCosts)" />
-                    <Area type="monotone" dataKey="profit" name={t.chartProfit} stroke="#10b981" fillOpacity={1} fill="url(#colorProfit)" />
-                  </AreaChart>
-                </ResponsiveContainer>
-             </div>
+            <h3 className="text-lg font-semibold mb-6 text-gray-800 dark:text-gray-100">{t.chartTitle}</h3>
+
+            <div className="w-full h-[280px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={chartData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                  <defs>
+                    <linearGradient id="colorProfit" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                    </linearGradient>
+                    <linearGradient id="colorCosts" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" className="dark:stroke-gray-700" />
+                  <XAxis
+                    dataKey="units"
+                    tickLine={false}
+                    axisLine={false}
+                    className="text-xs text-gray-500"
+                    tickFormatter={(value) => `${value} u.`}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    className="text-xs text-gray-500"
+                    tickFormatter={(value) => `${value}€`}
+                  />
+                  <Tooltip
+                    contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                    labelFormatter={(label) => `${label} ${t.unitsSold}`}
+                  />
+                  <ReferenceLine x={conversions} stroke="#2563eb" strokeDasharray="3 3" label={{ position: 'top', value: 'Actual', fill: '#2563eb', fontSize: 12 }} />
+                  <ReferenceLine y={0} stroke="#9ca3af" />
+                  <Area type="monotone" dataKey="costs" name={t.chartCosts} stroke="#ef4444" fillOpacity={1} fill="url(#colorCosts)" />
+                  <Area type="monotone" dataKey="profit" name={t.chartProfit} stroke="#10b981" fillOpacity={1} fill="url(#colorProfit)" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
           </div>
 
         </div>
