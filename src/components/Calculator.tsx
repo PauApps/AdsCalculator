@@ -210,7 +210,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
         <div className="lg:col-span-4 space-y-8">
           
           {/* Investment Data */}
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
             <h2 className="text-xl font-semibold mb-5 text-gray-800 dark:text-gray-100 flex items-center gap-2">
               <TrendingUp size={20} className="text-blue-600" />
               {t.investment}
@@ -225,7 +225,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
                     className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 bg-gray-50 dark:bg-gray-700 dark:text-white transition-all outline-none"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.clicks}</label>
                   <input 
@@ -249,7 +249,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
           </div>
 
           {/* Product Costs */}
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
             <h2 className="text-xl font-semibold mb-5 text-gray-800 dark:text-gray-100">{t.product}</h2>
             <div className="space-y-4">
               <div>
@@ -261,7 +261,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
                   className="w-full px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:text-white outline-none"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">{t.cogs}</label>
                   <input 
@@ -301,22 +301,22 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
         {/* RESULTS SECTION */}
         <div className="lg:col-span-8 flex flex-col gap-6">
           
-          <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
+          <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 relative">
             <button 
               onClick={handleCopy}
-              className="absolute top-6 right-6 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors flex items-center gap-2 text-sm font-medium"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors flex items-center gap-2 text-sm font-medium"
               title={t.copy}
             >
               {copied ? <span className="text-green-500">{t.copied}</span> : <><Copy size={18} /> <span className="hidden sm:inline">{t.copy}</span></>}
             </button>
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{t.results}</h2>
             
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               
               {/* ROAS */}
               <div className="p-4 rounded-xl bg-blue-600/10 dark:bg-blue-600/20 border border-blue-600/20 dark:border-blue-600/30">
                 <p className="text-sm font-medium text-blue-600 dark:text-blue-600 mb-1">{t.roas}</p>
-                <p className={`text-3xl font-bold ${Number(calculations.roas) >= Number(calculations.breakevenRoas) ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
+                <p className={`text-2xl sm:text-3xl font-bold ${Number(calculations.roas) >= Number(calculations.breakevenRoas) ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                   {calculations.roas}x
                 </p>
                 <p className="text-xs text-gray-500 mt-2">{t.breakevenRoas}: {calculations.breakevenRoas}x</p>
@@ -325,15 +325,15 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
               {/* ROI */}
               <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600">
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">{t.roi}</p>
-                <p className={`text-3xl font-bold ${Number(calculations.roi) > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
+                <p className={`text-2xl sm:text-3xl font-bold ${Number(calculations.roi) > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                   {calculations.roi}%
                 </p>
               </div>
 
               {/* Net Profit */}
-              <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600">
+              <div className="col-span-2 lg:col-span-1 p-4 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600">
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">{t.netProfit}</p>
-                <p className={`text-3xl font-bold ${Number(calculations.totalNetProfit) > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
+                <p className={`text-2xl sm:text-3xl font-bold ${Number(calculations.totalNetProfit) > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                   {calculations.totalNetProfit}€
                 </p>
               </div>
@@ -358,7 +358,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
           </div>
 
           {/* CHART SECTION */}
-          <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex-1 min-h-[350px]">
+          <div className="bg-white dark:bg-gray-800 p-5 sm:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex-1 min-h-[350px]">
              <h3 className="text-lg font-semibold mb-6 text-gray-800 dark:text-gray-100">{t.chartTitle}</h3>
              
              <div className="w-full h-[280px]">

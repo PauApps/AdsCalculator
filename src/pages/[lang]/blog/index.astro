@@ -63,10 +63,10 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center">
         <a href={`/${lang}`} title={isCa ? "Tornar a la pàgina principal" : "Volver a la página principal"} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <div class="flex gap-4 items-center">
-          <div class="flex items-center gap-2 text-sm font-medium pr-4 border-r border-gray-200 dark:border-gray-800">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 items-center">
+          <div class="flex items-center gap-2 text-sm font-medium pr-3 md:pr-4 border-r border-gray-200 dark:border-gray-800">
              <a href="/blog" title="English blog" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">EN</a>
              <a href="/es/blog" title="Blog en español" class={`px-2 py-1 rounded-md transition-all ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>ES</a>
              <a href="/ca/blog" title="Blog en català" class={`px-2 py-1 rounded-md transition-all ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>CA</a>
