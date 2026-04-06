@@ -7,8 +7,8 @@ export default defineConfig({
   site: 'https://adsroicalc.com',
   integrations: [react(), tailwind()],
   i18n: {
-    defaultLocale: "es",
-    locales: ["es", "ca"],
+    defaultLocale: "en",
+    locales: ["en", "es", "ca"],
     routing: {
       prefixDefaultLocale: false
     }

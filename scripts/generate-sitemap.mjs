@@ -7,10 +7,13 @@ const DIST_DIR = './dist';
 // Define the pages to include in the sitemap
 const pages = [
   '',
+  '/es',
   '/ca',
   '/blog',
+  '/es/blog',
   '/ca/blog',
-  '/blog/que-es-el-roas',
+  '/blog/what-is-roas',
+  '/es/blog/que-es-el-roas',
   '/ca/blog/que-es-el-roas'
 ];
 
@@ -21,7 +24,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <loc>${SITE_URL}${page}</loc>
       <lastmod>${new Date().toISOString()}</lastmod>
       <changefreq>weekly</changefreq>
-      <priority>${page === '' || page === '/ca' ? '1.0' : '0.8'}</priority>
+      <priority>${page === '' || page === '/es' || page === '/ca' ? '1.0' : '0.8'}</priority>
     </url>`).join('')}
 </urlset>`;
 

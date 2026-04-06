@@ -4,24 +4,62 @@ import '../../styles/global.css';
 
 export function getStaticPaths() {
   return [
+    { params: { lang: 'es' } },
     { params: { lang: 'ca' } },
   ];
 }
 
 const { lang } = Astro.params;
+const isEs = lang === 'es';
 const isCa = lang === 'ca';
-const title = isCa ? 'Ads Calculator | Calculadora ROAS & ROI Professional' : 'Ads Calculator | Calculadora ROAS & ROI Profesional';
-const description = isCa ? 'Calcula ROAS, ROI i breakeven dels teus Ads. Mesura el benefici real amb gràfics interactius.' : 'Calcula ROAS, ROI y breakeven de tus Ads. Mide el beneficio real con gráficos interactivos.';
-const keywords = isCa ? 'calculadora ads, calculadora roas, calculadora roi, rendibilitat ads, growth marketing, roi ads, roas ads' : 'calculadora ads, calculadora roas, calculadora roi, rentabilidad ads, growth marketing, roi ads, roas ads';
+
+const title = isCa 
+  ? 'Ads Calculator | Calculadora ROAS & ROI Professional' 
+  : isEs 
+    ? 'Ads Calculator | Calculadora ROAS & ROI Profesional'
+    : 'Ads Calculator | Professional ROAS & ROI Calculator';
+
+const description = isCa 
+  ? 'Calcula ROAS, ROI i breakeven dels teus Ads. Mesura el benefici real amb gràfics interactius.' 
+  : isEs
+    ? 'Calcula ROAS, ROI y breakeven de tus Ads. Mide el beneficio real con gráficos interactivos.'
+    : 'Calculate ROAS, ROI and breakeven of your Ads. Measure real profit with interactive charts.';
+
+const keywords = isCa 
+  ? 'calculadora ads, calculadora roas, calculadora roi, rendibilitat ads, growth marketing, roi ads, roas ads' 
+  : isEs
+    ? 'calculadora ads, calculadora roas, calculadora roi, rentabilidad ads, growth marketing, roi ads, roas ads'
+    : 'ads calculator, roas calculator, roi calculator, ads profitability, growth marketing, ads roi, ads roas';
 
 const t = {
-  heroTitle: isCa ? 'Pren el control de la teva rendibilitat en Ads' : 'Toma el control de tu rentabilidad en Ads',
-  heroSubtitle: isCa ? 'Calcula en segons el ROAS, ROI i breakeven de les teves campanyes de Growth Marketing amb precisió professional.' : 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.',
-  cta: isCa ? 'Comença a calcular' : 'Empieza a calcular',
+  heroTitle: isCa 
+    ? 'Pren el control de la teva rendibilitat en Ads' 
+    : isEs 
+      ? 'Toma el control de tu rentabilidad en Ads'
+      : 'Take control of your Ads profitability',
+  heroSubtitle: isCa 
+    ? 'Calcula en segons el ROAS, ROI i breakeven de les teves campanyes de Growth Marketing amb precisió professional.' 
+    : isEs
+      ? 'Calcula en segundos el ROAS, ROI y breakeven de tus campañas de Growth Marketing con precisión profesional.'
+      : 'Calculate ROAS, ROI and breakeven of your Growth Marketing campaigns in seconds with professional precision.',
+  cta: isCa 
+    ? 'Comença a calcular' 
+    : isEs
+      ? 'Empieza a calcular'
+      : 'Start calculating',
   features: [
-    { title: isCa ? 'Càlculs en temps real' : 'Cálculos en tiempo real', desc: isCa ? 'Veus els resultats a l\'instant.' : 'Mira los resultados al instante.' },
-    { title: isCa ? 'Gràfics interactius' : 'Gráficos interactivos', desc: isCa ? 'Visualitza el teu punt d\'equilibri.' : 'Visualiza tu punto de equilibrio.' },
-    { title: isCa ? 'Privadesa Total' : 'Privacidad Total', desc: isCa ? 'Les teves dades no surten del navegador.' : 'Tus datos no salen del navegador.' }
+    { 
+      title: isCa ? 'Càlculs en temps real' : isEs ? 'Cálculos en tiempo real' : 'Real-time calculations', 
+      desc: isCa ? 'Veus els resultats a l\'instant.' : isEs ? 'Mira los resultados al instante.' : 'See results instantly.' 
+    },
+    { 
+      title: isCa ? 'Gràfics interactius' : isEs ? 'Gráficos interactivos' : 'Interactive charts', 
+      desc: isCa ? 'Visualitza el teu punt d\'equilibri.' : isEs ? 'Visualiza tu punto de equilibrio.' : 'Visualize your breakeven point.' 
+    },
+    { 
+      title: isCa ? 'Privadesa Total' : isEs ? 'Privacidad Total' : 'Total Privacy', 
+      desc: isCa ? 'Les teves dades no surten del navegador.' : isEs ? 'Tus datos no salen del navegador.' : 'Your data never leaves your browser.' 
+    }
   ]
 };
 
@@ -51,7 +89,8 @@ const jsonLd = {
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={`https://adsroicalc.com/${lang}`} />
-    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/" />
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es" />
     <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca" />
     <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/" />
     
@@ -87,11 +126,12 @@ const jsonLd = {
           Ads <span class="text-blue-600 italic">Calculator</span>
         </div>
         <nav class="flex gap-6 items-center">
-          <a href={isCa ? "/ca/blog" : "/blog"} title={isCa ? "Visitar el blog d'Ads Calculator" : "Visitar el blog de Ads Calculator"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">
+          <a href={isCa ? "/ca/blog" : isEs ? "/es/blog" : "/blog"} title={isCa ? "Visitar el blog d'Ads Calculator" : isEs ? "Visitar el blog de Ads Calculator" : "Visit Ads Calculator Blog"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">
             Blog
           </a>
           <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-6">
-            <a href="/" title="Versión en español" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">ES</a>
+            <a href="/" title="English version" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">EN</a>
+            <a href="/es" title="Versión en español" class={`px-2 py-1 rounded-md transition-all ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>ES</a>
             <a href="/ca" title="Versió en català" class={`px-2 py-1 rounded-md transition-all ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>CA</a>
           </div>
         </nav>
@@ -103,7 +143,7 @@ const jsonLd = {
       <section class="pt-20 pb-12 px-6">
         <div class="max-w-4xl mx-auto text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <span class="inline-block px-4 py-1.5 bg-blue-600/10 text-blue-600 rounded-full text-sm font-semibold tracking-wide uppercase">
-            {isCa ? 'Eina Gratuïta' : 'Herramienta Gratuita'}
+            {isCa ? 'Eina Gratuïta' : isEs ? 'Herramienta Gratuita' : 'Free Tool'}
           </span>
           <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
             {t.heroTitle}
@@ -112,7 +152,7 @@ const jsonLd = {
             {t.heroSubtitle}
           </p>
           <div class="flex justify-center pt-4">
-            <a href="#calculator" title={isCa ? "Anar directament a la calculadora de ROAS i ROI" : "Ir directamente a la calculadora de ROAS y ROI"} class="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-blue-600/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group">
+            <a href="#calculator" title={isCa ? "Anar directament a la calculadora de ROAS i ROI" : isEs ? "Ir directamente a la calculadora de ROAS y ROI" : "Go directly to ROAS and ROI calculator"} class="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-blue-600/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group">
               {t.cta}
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
@@ -136,7 +176,7 @@ const jsonLd = {
       <section id="calculator" class="py-20 px-6 scroll-mt-24">
         <div class="max-w-6xl mx-auto">
           <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/20 dark:border-white/5 overflow-hidden ring-1 ring-black/5">
-             <Calculator client:load lang={lang as 'es' | 'ca'} />
+             <Calculator client:load lang={lang as 'en' | 'es' | 'ca'} />
           </div>
         </div>
       </section>
@@ -151,15 +191,14 @@ const jsonLd = {
               </div>
               Ads <span class="text-blue-600 italic">Calculator</span>
            </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : isEs ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
         </div>
         <div class="flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
-           <a href="#" title={isCa ? "Seguir a Twitter" : "Seguir en Twitter"} class="hover:text-blue-600 transition-colors">Twitter</a>
-           <a href="#" title={isCa ? "Seguir a LinkedIn" : "Seguir en LinkedIn"} class="hover:text-blue-600 transition-colors">LinkedIn</a>
-           <a href={isCa ? "/ca/blog" : "/blog"} title={isCa ? "Veure tots els articles del blog" : "Ver todos los artículos del blog"} class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href="#" title={isCa ? "Seguir a Twitter" : isEs ? "Seguir en Twitter" : "Follow on Twitter"} class="hover:text-blue-600 transition-colors">Twitter</a>
+           <a href="#" title={isCa ? "Seguir a LinkedIn" : isEs ? "Seguir en LinkedIn" : "Follow on LinkedIn"} class="hover:text-blue-600 transition-colors">LinkedIn</a>
+           <a href={isCa ? "/ca/blog" : isEs ? "/es/blog" : "/blog"} title={isCa ? "Veure tots els articles del blog" : isEs ? "Ver todos los artículos del blog" : "See all blog posts"} class="hover:text-blue-600 transition-colors">Blog</a>
         </div>
       </div>
-    </footer>
   </body>
 </html>
 

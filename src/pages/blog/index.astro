@@ -2,13 +2,12 @@
 import { getCollection } from 'astro:content';
 import '../../styles/global.css';
 
-const lang = 'es';
-const isCa = false;
-const title = 'Blog de Growth';
+const lang = 'en';
+const title = 'Growth Blog';
 
-// Get posts specifically for Spanish
+// Get posts specifically for English
 const allPosts = await getCollection('blog');
-const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id.includes('/'));
+const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
 
 ---
 
@@ -44,25 +43,32 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
     <!-- End Google Tag Manager (noscript) -->
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" title="Ir a la página principal" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/" title="Volver a la calculadora" class="text-sm font-medium hover:text-blue-600 transition-colors border px-3 py-1 rounded-lg">Volver a Calculadora</a>
+        <a href="/" title="Go to home page" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
+        <div class="flex gap-4 items-center">
+          <div class="flex items-center gap-2 text-sm font-medium pr-4 border-r border-gray-200 dark:border-gray-800">
+            <a href="/blog" title="English blog" class="px-2 py-1 rounded-md transition-all bg-blue-600 text-white shadow-lg shadow-blue-600/25">EN</a>
+            <a href="/es/blog" title="Blog en español" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">ES</a>
+            <a href="/ca/blog" title="Blog en català" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">CA</a>
+          </div>
+          <a href="/" title="Back to calculator" class="text-sm font-medium hover:text-blue-600 transition-colors border px-3 py-1 rounded-lg">Back to Calculator</a>
+        </div>
       </div>
     </header>
 
     <main class="flex-grow py-12 max-w-4xl mx-auto w-full px-6">
-      <h1 class="text-4xl font-bold mb-8">Blog de <span class="text-blue-600 italic">Growth</span></h1>
+      <h1 class="text-4xl font-bold mb-8"><span class="text-blue-600 italic">Growth</span> Blog</h1>
       
       {posts.length === 0 ? (
-        <div class="text-gray-500 text-center py-20">No hay posts todavía en español. Próximamente...</div>
+        <div class="text-gray-500 text-center py-20">No English posts yet. Coming soon...</div>
       ) : (
         <div class="grid gap-6">
           {posts.map(post => {
-             const cleanSlug = post.slug.startsWith('es/') ? post.slug.replace('es/', '') : post.slug;
+             const cleanSlug = post.slug.startsWith('en/') ? post.slug.replace('en/', '') : post.slug;
              return (
-               <a href={`/blog/${cleanSlug}`} title={`Leer el artículo: ${post.data.title}`} class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all hover:scale-[1.01]">
+               <a href={`/blog/${cleanSlug}`} title={`Read article: ${post.data.title}`} class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all hover:scale-[1.01]">
                  <h2 class="text-2xl font-bold mb-2">{post.data.title}</h2>
                  <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">{post.data.description}</p>
-                 <span class="text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider">Leer más →</span>
+                 <span class="text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider">Read more →</span>
                </a>
              )
           })}
@@ -70,7 +76,7 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
       )}
     </main>
     <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6 mt-20 text-center text-sm text-slate-500">
-      <p>© 2026 Ads Calculator. Todos los derechos reservados.</p>
+      <p>© 2026 Ads Calculator. All rights reserved.</p>
     </footer>
   </body>
 </html>

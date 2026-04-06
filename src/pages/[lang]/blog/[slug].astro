@@ -4,18 +4,24 @@ import '../../../styles/global.css';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  // Specifically filter for Catalan entries for the /ca/blog
-  const catalanEntries = blogEntries.filter(entry => entry.slug.startsWith('ca/'));
   
-  return catalanEntries.map(entry => {
-    // entry.slug includes "ca/" prefix
-    const slug = entry.slug.replace('ca/', '');
-    const lang = 'ca';
-    return {
-      params: { lang, slug },
-      props: { entry },
-    };
+  const entries = blogEntries.flatMap(entry => {
+    if (entry.slug.startsWith('ca/')) {
+        return [{
+          params: { lang: 'ca', slug: entry.slug.replace('ca/', '') },
+          props: { entry },
+        }];
+    }
+    if (entry.slug.startsWith('es/')) {
+        return [{
+          params: { lang: 'es', slug: entry.slug.replace('es/', '') },
+          props: { entry },
+        }];
+    }
+    return [];
   });
+  
+  return entries;
 }
 
 const { entry } = Astro.props;
@@ -64,8 +70,8 @@ const isCa = lang === 'ca';
 
     <main class="flex-grow py-12 max-w-4xl mx-auto w-full px-6">
       <article class="prose dark:prose-invert mx-auto">
-        <h1 class="text-4xl font-extrabold mb-4">{entry.data.title}</h1>
-        <p class="text-gray-500 mb-8">{entry.data.description}</p>
+        <h1 class="text-4xl font-extrabold mb-4 leading-tight">{entry.data.title}</h1>
+        <p class="text-gray-500 mb-8 italic">{entry.data.description}</p>
         <div class="border-t border-gray-200 dark:border-gray-800 pt-8">
             <Content />
         </div>

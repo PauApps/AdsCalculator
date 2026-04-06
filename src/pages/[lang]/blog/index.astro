@@ -4,17 +4,19 @@ import '../../../styles/global.css';
 
 export function getStaticPaths() {
   return [
+    { params: { lang: 'es' } },
     { params: { lang: 'ca' } },
   ];
 }
 
 const { lang } = Astro.params;
+const isEs = lang === 'es';
 const isCa = lang === 'ca';
-const title = isCa ? 'Blog de Growth' : 'Blog de Growth';
+const title = isCa ? 'Blog de Growth' : isEs ? 'Blog de Growth' : 'Growth Blog';
 
-// Simulate getting collection, filtering by language if needed (we'll just list them)
+// Get posts specifically for the current language
 const allPosts = await getCollection('blog');
-const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id.includes('/'));
+const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
 
 ---
 
@@ -51,26 +53,39 @@ const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`) || !post.id
     <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 p-6">
       <div class="max-w-4xl mx-auto flex justify-between items-center">
         <a href={`/${lang}`} title={isCa ? "Tornar a la pàgina principal" : "Volver a la página principal"} class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href={`/${lang}`} title={isCa ? "Tornar a la calculadora" : "Volver a la calculadora"} class="text-sm font-medium hover:text-blue-600 transition-colors uppercase tracking-wider font-bold">{isCa ? 'Tornar a la Calculadora' : 'Volver a Calculadora'}</a>
+        <div class="flex gap-4 items-center">
+          <div class="flex items-center gap-2 text-sm font-medium pr-4 border-r border-gray-200 dark:border-gray-800">
+             <a href="/blog" title="English blog" class="px-2 py-1 rounded-md transition-all text-gray-500 hover:text-gray-800 dark:hover:text-gray-200">EN</a>
+             <a href="/es/blog" title="Blog en español" class={`px-2 py-1 rounded-md transition-all ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>ES</a>
+             <a href="/ca/blog" title="Blog en català" class={`px-2 py-1 rounded-md transition-all ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>CA</a>
+          </div>
+          <a href={`/${lang}`} title={isCa ? "Tornar a la calculadora" : "Volver a la calculadora"} class="text-sm font-medium hover:text-blue-600 transition-colors border px-3 py-1 rounded-lg">{isCa ? 'Tornar' : 'Volver'}</a>
+        </div>
       </div>
     </header>
 
     <main class="flex-grow py-12 max-w-4xl mx-auto w-full px-6">
-      <h1 class="text-3xl font-bold mb-8">{title}</h1>
+      <h1 class="text-4xl font-bold mb-8">{isCa ? 'Blog de ' : 'Blog de '}<span class="text-blue-600 italic">Growth</span></h1>
       
       {posts.length === 0 ? (
-        <div class="text-gray-500">{isCa ? 'No hi ha posts encara. Pròximament...' : 'No hay posts todavía. Próximamente...'}</div>
+        <div class="text-gray-500 text-center py-20">{isCa ? 'No hi ha posts encara en català. Pròximament...' : 'No hay posts todavía en español. Próximamente...'}</div>
       ) : (
         <div class="grid gap-6">
-          {posts.map(post => (
-            <a href={`/${lang}/blog/${post.slug}`} title={isCa ? `Llegir l'article: ${post.data.title}` : `Leer el artículo: ${post.data.title}`} class="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-colors">
-              <h2 class="text-xl font-semibold mb-2">{post.data.title}</h2>
-              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">{post.data.description}</p>
-              <span class="text-blue-600 dark:text-blue-400 text-sm font-medium">{isCa ? 'Llegir més →' : 'Leer más →'}</span>
-            </a>
-          ))}
+          {posts.map(post => {
+             const cleanSlug = post.slug.split('/').pop();
+             return (
+               <a href={`/${lang}/blog/${cleanSlug}`} title={isCa ? `Llegir l'article: ${post.data.title}` : `Leer el artículo: ${post.data.title}`} class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all hover:scale-[1.01]">
+                 <h2 class="text-2xl font-bold mb-2">{post.data.title}</h2>
+                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">{post.data.description}</p>
+                 <span class="text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider">{isCa ? 'Llegir més →' : 'Leer más →'}</span>
+               </a>
+             )
+          })}
         </div>
       )}
     </main>
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6 mt-20 text-center text-sm text-slate-500">
+      <p>© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+    </footer>
   </body>
 </html>

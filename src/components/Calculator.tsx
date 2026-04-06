@@ -11,9 +11,34 @@ import {
   ReferenceLine
 } from 'recharts';
 
-export default function Calculator({ lang = 'es' }: { lang?: 'es' | 'ca' }) {
+export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' }) {
   // Literals for basic i18n
   const t = {
+    en: {
+      title: 'ROAS & ROI Calculator',
+      investment: 'Investment Data',
+      adSpend: 'Ad Spend (€)',
+      clicks: 'Clicks',
+      conversions: 'Conversions',
+      product: 'Product Costs',
+      salePrice: 'Sale Price (€)',
+      cogs: 'Unit Cost / COGS (€)',
+      tax: 'VAT (%)',
+      results: 'Results',
+      roas: 'ROAS',
+      roi: 'Total ROI',
+      cpa: 'CPA (Cost per Acquisition)',
+      netMarginPerUnit: 'Net Margin / Unit',
+      netProfit: 'Net Profit',
+      breakevenRoas: 'Breakeven ROAS',
+      copy: 'Copy Results',
+      copied: 'Copied!',
+      chartTitle: 'Revenue, Costs and Profit Relation',
+      chartRevenue: 'Revenue',
+      chartCosts: 'Total Costs',
+      chartProfit: 'Profit',
+      unitsSold: 'Units Sold',
+    },
     es: {
       title: 'Calculadora de ROAS & ROI',
       investment: 'Datos de Inversión',
