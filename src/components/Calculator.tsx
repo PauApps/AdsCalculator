@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Copy, TrendingUp, Calculator as CalcIcon } from 'lucide-react';
+import { Copy, TrendingUp, Calculator as CalcIcon, RotateCcw } from 'lucide-react';
 import {
   ResponsiveContainer,
   AreaChart,
@@ -38,6 +38,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
       chartCosts: 'Total Costs',
       chartProfit: 'Profit',
       unitsSold: 'Units Sold',
+      clearFields: 'Clear Fields',
     },
     es: {
       title: 'Calculadora de ROAS & ROI',
@@ -63,6 +64,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
       chartCosts: 'Costes Totales',
       chartProfit: 'Beneficio',
       unitsSold: 'Unidades Vendidas',
+      clearFields: 'Limpiar campos',
     },
     ca: {
       title: 'Calculadora de ROAS & ROI',
@@ -88,6 +90,7 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
       chartCosts: 'Costos Totals',
       chartProfit: 'Benefici',
       unitsSold: 'Unitats Venudes',
+      clearFields: 'Netejar camps',
     }
   }[lang];
 
@@ -101,6 +104,15 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
   const [taxPercent, setTaxPercent] = useState<number>(21);
 
   const [copied, setCopied] = useState(false);
+
+  const handleClear = () => {
+    setAdSpend(0);
+    setClicks(0);
+    setConversions(0);
+    setSalePrice(0);
+    setCogs(0);
+    setTaxPercent(0);
+  };
 
   // Derived Calculations
   const calculations = useMemo(() => {
@@ -275,6 +287,14 @@ export default function Calculator({ lang = 'en' }: { lang?: 'en' | 'es' | 'ca' 
               </div>
             </div>
           </div>
+
+          <button
+            onClick={handleClear}
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all font-medium text-sm shadow-sm"
+          >
+            <RotateCcw size={16} />
+            {t.clearFields}
+          </button>
 
         </div>
 
