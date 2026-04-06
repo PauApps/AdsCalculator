@@ -13,6 +13,9 @@ const pages = [
   '/es/blog',
   '/ca/blog',
   '/blog/what-is-roas',
+  '/blog/breakeven-roas',
+  '/blog/performance-vs-growth',
+  '/blog/roi-mistakes',
   '/es/blog/que-es-el-roas',
   '/ca/blog/que-es-el-roas'
 ];
