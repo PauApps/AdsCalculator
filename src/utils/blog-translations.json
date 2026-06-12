@@ -1,5 +1,5 @@
 {
-  "breakeven-roas": {
+  "roas-de-punto-de-equilibrio": {
     "en": "breakeven-roas",
     "es": "roas-de-punto-de-equilibrio",
     "ca": "roas-de-punt-de-equilibri"
@@ -9,14 +9,274 @@
     "es": "performance-vs-growth",
     "ca": "performance-vs-growth"
   },
-  "roi-mistakes": {
+  "errores-roi-ads": {
     "en": "roi-mistakes",
     "es": "errores-roi-ads",
     "ca": "errors-roi-ads"
   },
-  "what-is-roas": {
+  "que-es-el-roas": {
     "en": "what-is-roas",
     "es": "que-es-el-roas",
     "ca": "que-es-el-roas"
+  },
+  "analisis-cohortes-secreto-analitico-descubrir-cuando-vuelve-rentable-cliente": {
+    "en": "cohort-analysis-discover-customer-profitability",
+    "es": "analisis-cohortes-secreto-analitico-descubrir-cuando-vuelve-rentable-cliente",
+    "ca": "analisi-cohorts-descobrir-rentabilitat-client"
+  },
+  "breakeven-roas-ecommerce": {
+    "en": "breakeven-roas-ecommerce",
+    "es": "breakeven-roas-ecommerce",
+    "ca": "roas-punt-equilibri-ecommerce"
+  },
+  "calculadora-roas-predecir-ganancias-negocio": {
+    "en": "roas-vs-roi-true-profitability-metric-digital-marketing",
+    "es": "calculadora-roas-predecir-ganancias-negocio",
+    "ca": "calculadora-roas-predir-beneficis-negoci"
+  },
+  "calcular-rentabilidad-campana-growth-marketing": {
+    "en": "calculate-growth-marketing-campaign-profitability",
+    "es": "calcular-rentabilidad-campana-growth-marketing",
+    "ca": "calcular-rendibilitat-campanya-growth-marketing"
+  },
+  "campanas-branding-vs-performance-medir-retorno-inversion-largo-plazo": {
+    "en": "branding-vs-performance-campaigns-measuring-long-term-roi",
+    "es": "campanas-branding-vs-performance-medir-retorno-inversion-largo-plazo",
+    "ca": "campanyes-branding-vs-performance-mesurar-retorn-inversio-llarg-termini"
+  },
+  "canibalizacion-marca-debes-pujar-propias-palabras-clave-marca-google-search": {
+    "en": "brand-cannibalization-should-you-bid-own-brand-keywords-google-search",
+    "es": "canibalizacion-marca-debes-pujar-propias-palabras-clave-marca-google-search",
+    "ca": "canibalitzacio-marca-has-de-pujar-propies-paraules-clau-marca-google-search"
+  },
+  "cogs-costo-bienes-vendidos": {
+    "en": "cogs-cost-of-goods-sold-destroys-roi-if-ignored",
+    "es": "cogs-costo-bienes-vendidos",
+    "ca": "cogs-cost-dels-bens-venuts-destrueix-roi-si-lignores"
+  },
+  "como-auditar-cuenta-google-ads-saturada-dejado-ser-rentable": {
+    "en": "how-to-audit-saturated-google-ads-account-lost-profitability",
+    "es": "como-auditar-cuenta-google-ads-saturada-dejado-ser-rentable",
+    "ca": "com-auditar-compte-google-ads-saturat-deixat-ser-rendible"
+  },
+  "como-calcular-coste-adquisicion-clientes-cac-ponderado-canal": {
+    "en": "how-to-calculate-customer-acquisition-cost-cac-weighted-by-channel",
+    "es": "como-calcular-coste-adquisicion-clientes-cac-ponderado-canal",
+    "ca": "com-calcular-cost-adquisicio-clients-cac-ponderat-canal"
+  },
+  "como-calcular-elasticidad-precio-demanda-tests-ab-campanas-ads": {
+    "en": "how-to-calculate-price-elasticity-of-demand-ab-testing-ads",
+    "es": "como-calcular-elasticidad-precio-demanda-tests-ab-campanas-ads",
+    "ca": "com-calcular-elasticitat-preu-demanda-tests-ab-campanyes-ads"
+  },
+  "como-escalar-presupuesto-google-performance-max-pmax-sin-romper-roas": {
+    "en": "how-to-scale-google-performance-max-pmax-budget-without-breaking-roas",
+    "es": "como-escalar-presupuesto-google-performance-max-pmax-sin-romper-roas",
+    "ca": "com-escalar-pressupost-google-performance-max-pmax-sense-trencar-roas"
+  },
+  "como-estructurar-presupuesto-growth-marketing-desde-cero-mvp": {
+    "en": "how-to-structure-growth-marketing-budget-from-scratch-mvp",
+    "es": "como-estructurar-presupuesto-growth-marketing-desde-cero-mvp",
+    "ca": "com-estructurar-pressupost-growth-marketing-des-de-zero-mvp"
+  },
+  "como-optimizar-valor-medio-pedido-aov-rescatar-roas-plano": {
+    "en": "how-to-optimize-average-order-value-aov-rescue-flat-roas",
+    "es": "como-optimizar-valor-medio-pedido-aov-rescatar-roas-plano",
+    "ca": "com-optimitzar-valor-mitjà-comanda-aov-rescatar-roas-pla"
+  },
+  "como-preparar-campanas-financieras-black-friday-sin-hundir-margen": {
+    "en": "how-to-prepare-financial-campaigns-black-friday-without-sinking-margin",
+    "es": "como-preparar-campanas-financieras-black-friday-sin-hundir-margen",
+    "ca": "com-preparar-campanyes-financeres-black-friday-sense-enfonsar-marge"
+  },
+  "como-utilizar-inteligencia-artificial-generar-copys-bajar-cpa": {
+    "en": "how-to-use-ai-to-generate-ad-copy-and-lower-cpa",
+    "es": "como-utilizar-inteligencia-artificial-generar-copys-bajar-cpa",
+    "ca": "com-utilitzar-intel-ligencia-artificial-generar-copys-baixar-cpa"
+  },
+  "coste-inventario-parado-liquidar-stock-campanas-publicitarias-punto-equilibrio": {
+    "en": "cost-of-idle-inventory-liquidating-stock-with-breakeven-ad-campaigns",
+    "es": "coste-inventario-parado-liquidar-stock-campanas-publicitarias-punto-equilibrio",
+    "ca": "cost-inventari-aturat-liquidar-estoc-campanyes-publicitaries-punt-equilibri"
+  },
+  "costos-pasarela-pago-stripe-paypal-gasto-invisible-reduce-roi-neto": {
+    "en": "payment-gateway-costs-stripe-paypal-invisible-expense-reduces-net-roi",
+    "es": "costos-pasarela-pago-stripe-paypal-gasto-invisible-reduce-roi-neto",
+    "ca": "costos-passarella-pagament-stripe-paypal-despesa-invisible-redueix-roi-net"
+  },
+  "errores-comunes-calcular-coste-por-lead-cpl-servicios-locales": {
+    "en": "common-mistakes-calculating-cost-per-lead-cpl-local-services",
+    "es": "errores-comunes-calcular-coste-por-lead-cpl-servicios-locales",
+    "ca": "errors-comuns-calcular-cost-per-lead-cpl-serveis-locals"
+  },
+  "estrategias-escalar-roas-facebook-ads": {
+    "en": "strategies-to-scale-roas-on-facebook-ads",
+    "es": "estrategias-escalar-roas-facebook-ads",
+    "ca": "roas-vs-roi"
+  },
+  "estrategias-puja-google-ads-maximizar-conversiones-vs-target-roas": {
+    "en": "google-ads-bidding-strategies-maximize-conversions-vs-target-roas",
+    "es": "estrategias-puja-google-ads-maximizar-conversiones-vs-target-roas",
+    "ca": "estrategies-puja-google-ads-maximitzar-conversions-vs-target-roas"
+  },
+  "estrategias-retargeting-b2b-acortar-ciclos-venta-linkedin-ads": {
+    "en": "b2b-retargeting-strategies-shorten-sales-cycles-linkedin-ads",
+    "es": "estrategias-retargeting-b2b-acortar-ciclos-venta-linkedin-ads",
+    "ca": "estrategies-retargeting-b2b-escurcar-cicles-venda-linkedin-ads"
+  },
+  "google-ads-smart-bidding-algoritmo": {
+    "en": "google-ads-smart-bidding-algorithm-maximize-return",
+    "es": "google-ads-smart-bidding-algoritmo",
+    "ca": "google-ads-smart-bidding-algoritme-maximitzar-retorn"
+  },
+  "google-analytics-4-ga4-configuracion-eventos-personalizados-rastreo-roi": {
+    "en": "google-analytics-4-ga4-custom-events-roi-tracking",
+    "es": "google-analytics-4-ga4-configuracion-eventos-personalizados-rastreo-roi",
+    "ca": "google-analytics-4-ga4-configuracio-esdeveniments-personalitzats-seguiment-roi"
+  },
+  "guia-agencias-reportar-roi-real": {
+    "en": "agency-survival-guide-reporting-real-roi-transparently",
+    "es": "guia-agencias-reportar-roi-real",
+    "ca": "guia-supervivencia-agencies-reportar-roi-real-transparent"
+  },
+  "guia-definitiva-cpa-margen-neto": {
+    "en": "definitive-guide-cpa-net-margin-per-unit",
+    "es": "guia-definitiva-cpa-margen-neto",
+    "ca": "guia-definitiva-cpa-marge-net-per-unitat"
+  },
+  "guia-definitiva-kpis-dashboards-financieros-marketing-digital": {
+    "en": "definitive-guide-kpis-financial-dashboards-digital-marketing",
+    "es": "guia-definitiva-kpis-dashboards-financieros-marketing-digital",
+    "ca": "guia-definitiva-kpis-quadres-comandament-financers-marqueting-digital"
+  },
+  "guia-ltv-cac-ratio-metrica-reina-startups-levantar-capital": {
+    "en": "ltv-cac-ratio-guide-startups-raising-capital",
+    "es": "guia-ltv-cac-ratio-metrica-reina-startups-levantar-capital",
+    "ca": "guia-ratio-ltv-cac-metrica-reina-startups-aixecar-capital"
+  },
+  "guia-tecnica-como-configurar-api-conversiones-meta-no-perder-tracking": {
+    "en": "technical-guide-configure-meta-conversions-api-avoid-tracking-loss",
+    "es": "guia-tecnica-como-configurar-api-conversiones-meta-no-perder-tracking",
+    "ca": "guia-tecnica-configurar-api-conversions-meta-no-perdre-seguiment"
+  },
+  "impacto-iva-impuestos-anuncios": {
+    "en": "how-vat-hidden-taxes-affect-ads-real-profit",
+    "es": "impacto-iva-impuestos-anuncios",
+    "ca": "com-afecta-iva-impostos-benefici-real-anuncis"
+  },
+  "impacto-ltv-roi-publicitario": {
+    "en": "impact-ltv-advertising-roi",
+    "es": "impacto-ltv-roi-publicitario",
+    "ca": "impacte-ltv-roi-publicitari"
+  },
+  "impacto-oculto-devoluciones-ecommerce-recalculan-roi": {
+    "en": "hidden-impact-ecommerce-returns-recalculating-roi",
+    "es": "impacto-oculto-devoluciones-ecommerce-recalculan-roi",
+    "ca": "impacte-ocult-devolucions-ecommerce-recalcular-roi"
+  },
+  "impacto-velocidad-carga-landing-page-presupuesto-malgastado-ads": {
+    "en": "landing-page-load-speed-wasted-ads-budget",
+    "es": "impacto-velocidad-carga-landing-page-presupuesto-malgastado-ads",
+    "ca": "impacte-velocitat-carrega-landing-page-pressupost-malbaratat-ads"
+  },
+  "mer-marketing-efficiency-ratio-metrica-global-directores": {
+    "en": "mer-marketing-efficiency-ratio-global-metric-cmos",
+    "es": "mer-marketing-efficiency-ratio-metrica-global-directores",
+    "ca": "mer-marketing-efficiency-ratio-metrica-global-directors"
+  },
+  "metricas-clave-amazon-ads-diferencias-criticas-acos-tacos-roas": {
+    "en": "key-metrics-amazon-ads-acos-tacos-roas-differences",
+    "es": "metricas-clave-amazon-ads-diferencias-criticas-acos-tacos-roas",
+    "ca": "metriques-clau-amazon-ads-diferencies-critiques-acos-tacos-roas"
+  },
+  "metricas-retencion-saas-churn-rate-roi-publicitario": {
+    "en": "saas-retention-metrics-churn-rate-advertising-roi",
+    "es": "metricas-retencion-saas-churn-rate-roi-publicitario",
+    "ca": "metriques-retencio-saas-churn-rate-roi-publicitari"
+  },
+  "metricas-vanidad-vs-metricas-negocio": {
+    "en": "vanity-metrics-vs-business-metrics-advertising",
+    "es": "metricas-vanidad-vs-metricas-negocio",
+    "ca": "metriques-vanitat-vs-metriques-negoci"
+  },
+  "micro-conversiones-alimentar-pixel-anuncios-productos-alta-consideracion": {
+    "en": "micro-conversions-feed-pixel-high-consideration-products",
+    "es": "micro-conversiones-alimentar-pixel-anuncios-productos-alta-consideracion",
+    "ca": "micro-conversions-alimentar-pixel-anuncis-productes-alta-consideracio"
+  },
+  "modelos-atribucion-post-ios-14-5-medir-roas-real-privacidad": {
+    "en": "attribution-models-post-ios-14-5-measuring-real-roas-privacy",
+    "es": "modelos-atribucion-post-ios-14-5-medir-roas-real-privacidad",
+    "ca": "models-atribucio-post-ios-14-5-mesurar-roas-real-privacitat"
+  },
+  "peligro-ofertas-descuento-agresivas-margen-neto-publicitario": {
+    "en": "danger-aggressive-discount-offers-net-advertising-margin",
+    "es": "peligro-ofertas-descuento-agresivas-margen-neto-publicitario",
+    "ca": "perill-ofertes-descompte-agressives-marge-net-publicitari"
+  },
+  "presupuestos-contingencia-proteger-negocio-plataforma-publicitaria-banea-cuenta": {
+    "en": "contingency-budgets-protect-business-ad-platform-ban",
+    "es": "presupuestos-contingencia-proteger-negocio-plataforma-publicitaria-banea-cuenta",
+    "ca": "pressupostos-contingencia-protegir-negoci-plataforma-publicitaria-bloqueja-compte"
+  },
+  "psicologia-precio-pequenos-ajustes-checkout-alteran-conversion": {
+    "en": "pricing-psychology-checkout-adjustments-conversion-metrics",
+    "es": "psicologia-precio-pequenos-ajustes-checkout-alteran-conversion",
+    "ca": "psicologia-preu-petits-ajustos-checkout-alteren-conversio"
+  },
+  "publicidad-meta-infoproductos-estructuras-embudos-maximizar-roi-lanzamientos": {
+    "en": "meta-ads-infoproducts-funnel-structures-launch-roi",
+    "es": "publicidad-meta-infoproductos-estructuras-embudos-maximizar-roi-lanzamientos",
+    "ca": "publicitat-meta-infoproductes-estructures-embuts-maximitzar-roi-llancaments"
+  },
+  "publicidad-nativa-taboola-outbrain-calcular-rentabilidad-portales-nicho": {
+    "en": "native-advertising-taboola-outbrain-niche-portals-profitability",
+    "es": "publicidad-nativa-taboola-outbrain-calcular-rentabilidad-portales-nicho",
+    "ca": "publicitat-nativa-taboola-outbrain-calcular-rentabilitat-portals-nitxol"
+  },
+  "que-es-blended-roas-por-que-marcas-multimillonarias-confian-el": {
+    "en": "what-is-blended-roas-why-multimillion-brands-rely-on-it",
+    "es": "que-es-blended-roas-por-que-marcas-multimillonarias-confian-el",
+    "ca": "que-es-blended-roas-per-que-marques-multimilionaries-confien-ell"
+  },
+  "roas-vs-roi": {
+    "en": "roas-calculator-predict-business-profits",
+    "es": "roas-vs-roi",
+    "ca": "com-afecten-iva-impostos-ocults-benefici-real-anuncis"
+  },
+  "roi-contenidos-organicos-frente-trafico-pagado-estrategias-sinergia": {
+    "en": "roi-organic-content-vs-paid-traffic-synergy-strategies",
+    "es": "roi-contenidos-organicos-frente-trafico-pagado-estrategias-sinergia",
+    "ca": "roi-continguts-organics-front-transit-pagat-estrategies-sinergia"
+  },
+  "roi-email-marketing-automatizacion-valor-lista": {
+    "en": "email-marketing-roi-automation-strategies-maximize-list-value",
+    "es": "roi-email-marketing-automatizacion-valor-lista",
+    "ca": "roi-email-marketing-automatitzacio-estrategies-maximitzar-valor-llista"
+  },
+  "roi-marketing-influencers-modelos-afiliacion-frente-pagos-fijos-campana": {
+    "en": "influencer-marketing-roi-affiliate-models-vs-flat-fee-campaign",
+    "es": "roi-marketing-influencers-modelos-afiliacion-frente-pagos-fijos-campana",
+    "ca": "roi-marqueting-influencers-models-afiliacio-vs-pagaments-fixos-campanya"
+  },
+  "roi-optimizacion-tasa-conversion-cro-modificar-web-barato-trafico": {
+    "en": "conversion-rate-optimisation-roi-cro-cheaper-than-buying-traffic",
+    "es": "roi-optimizacion-tasa-conversion-cro-modificar-web-barato-trafico",
+    "ca": "roi-optimitzacio-taxa-conversio-cro-modificar-web-barat-transit"
+  },
+  "tendencias-growth-marketing-2027-metricas-centrarse-este-ano": {
+    "en": "growth-marketing-trends-2027-metrics-to-focus-on-this-year",
+    "es": "tendencias-growth-marketing-2027-metricas-centrarse-este-ano",
+    "ca": "tendencies-growth-marketing-2027-metriques-centrar-se-aquest-any"
+  },
+  "tiktok-ads-ecommerce-estructuras-campana-fatiga-creativo": {
+    "en": "tiktok-ads-ecommerce-campaign-structures-ad-fatigue",
+    "es": "tiktok-ads-ecommerce-estructuras-campana-fatiga-creativo",
+    "ca": "tiktok-ads-ecommerce-estructures-campanya-fatiga-creatiu"
+  },
+  "ventanas-atribucion-1-day-click-vs-7-day-click-cambian-datos-panel": {
+    "en": "attribution-windows-1-day-click-vs-7-day-click-dashboard-data",
+    "es": "ventanas-atribucion-1-day-click-vs-7-day-click-cambian-datos-panel",
+    "ca": "finestres-atribucio-1-day-click-vs-7-day-click-dades-panell"
   }
 }
