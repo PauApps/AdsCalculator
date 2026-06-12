@@ -105,7 +105,7 @@ const jsonLd = {
       gtag('config', 'G-Q73D3FT2VL');
     </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -304,9 +304,10 @@ const jsonLd = {
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href={isCa ? "/ca/blog" : isEs ? "/es/blog" : "/blog"} title={isCa ? "Veure tots els articles del blog" : isEs ? "Ver todos los artículos del blog" : "See all blog posts"} class="hover:text-blue-600 transition-colors">Blog</a>
-           <a href="/privacy" title={isCa ? "Política de Privacitat" : isEs ? "Política de Privacidad" : "Privacy Policy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : isEs ? 'Privacidad' : 'Privacy'}</a>
-           <a href="/legal" title={isCa ? "Avís Legal" : isEs ? "Aviso Legal" : "Legal Notice"} class="hover:text-blue-600 transition-colors">Legal</a>
-           <a href="/cookies" title={isCa ? "Política de Cookies" : isEs ? "Política de Cookies" : "Cookie Policy"} class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href={isCa ? "/ca/privacy" : isEs ? "/es/privacy" : "/privacy"} title={isCa ? "Política de Privacitat" : isEs ? "Política de Privacidad" : "Privacy Policy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : isEs ? 'Privacidad' : 'Privacy'}</a>
+           <a href={isCa ? "/ca/legal" : isEs ? "/es/legal" : "/legal"} title={isCa ? "Avís Legal" : isEs ? "Aviso Legal" : "Legal Notice"} class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href={isCa ? "/ca/cookies" : isEs ? "/es/cookies" : "/cookies"} title={isCa ? "Política de Cookies" : isEs ? "Política de Cookies" : "Cookie Policy"} class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href={isCa ? "/ca/contact" : isEs ? "/es/contact" : "/contact"} title={isCa ? "Contacte" : isEs ? "Contacto" : "Contact"} class="hover:text-blue-600 transition-colors">{isCa ? 'Contacte' : isEs ? 'Contacto' : 'Contact'}</a>
         </div>
       </div>
   </body>

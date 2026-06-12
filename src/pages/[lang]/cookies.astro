@@ -1,0 +1,281 @@
+---
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'ca' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isEs = lang === 'es';
+const isCa = lang === 'ca';
+
+const title = isCa 
+  ? 'Política de Cookies | Ads Calculator' 
+  : 'Política de Cookies | Ads Calculator';
+
+const description = isCa 
+  ? 'Política de Cookies d\'Ads Calculator. Aprèn quines cookies utilitzem, per a què serveixen i com pots configurar o eliminar les teves preferències.' 
+  : 'Política de Cookies de Ads Calculator. Conoce qué cookies utilizamos, sus propósitos y cómo puedes configurar o borrar tus preferencias.';
+
+const keywords = isCa
+  ? 'política de cookies, cookies ads calculator, cookies analítiques, desactivar cookies'
+  : 'política de cookies, cookies ads calculator, cookies analíticas, desactivar cookies';
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`https://adsroicalc.com/${lang}/cookies`} />
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/cookies" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/cookies" />
+    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/cookies" />
+    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/cookies" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q73D3FT2VL');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
+  </head>
+  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href={isCa ? "/ca" : "/es"} class="font-bold text-2xl tracking-tight flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          Ads <span class="text-blue-600 italic">Calculator</span>
+        </a>
+        <nav class="flex gap-3 md:gap-6 items-center">
+          <a href={isCa ? "/ca/blog" : "/es/blog"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
+          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
+            <a href="/cookies" title="English version" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">EN</a>
+            <span class={`px-2 py-1 rounded-md ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>ES</span>
+            <span class={`px-2 py-1 rounded-md ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>CA</span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
+          {isCa ? 'Política de Cookies' : 'Política de Cookies'}
+        </h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">
+          {isCa ? 'Última actualització: Juny de 2026' : 'Última actualización: Junio de 2026'}
+        </p>
+
+        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          {isCa ? (
+            <>
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Què són les cookies?</h2>
+                <p>Les cookies són petits fitxers de text que els llocs web emmagatzemen al teu ordinador o dispositiu mòbil quan els visites. S'utilitzen àmpliament perquè les pàgines web funcionin o ho facin de manera més eficient, així com per proporcionar informació estadística i d'optimització als propietaris de la web.</p>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Cookies que utilitzem</h2>
+                <p>A Ads Calculator, utilitzem cookies per personalitzar la publicitat, analitzar el trànsit web i oferir determinades funcionalitats tècniques. Aquest és el detall de les cookies actives en el nostre Lloc:</p>
+
+                <div class="overflow-x-auto my-6">
+                  <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+                    <thead>
+                      <tr class="bg-slate-50 dark:bg-slate-900/80 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800">
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Nom</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Proveïdor</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Finalitat</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Durada</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_ga, _ga_*</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Analytics</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Recopila dades de navegació anònimes per a analítica web.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">2 anys</td>
+                      </tr>
+                      <tr class="bg-slate-50/50 dark:bg-slate-900/30 border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_gcl_au</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google AdSense</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Seguiment de conversions publicitàries i rendiment d'anuncis.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">3 mesos</td>
+                      </tr>
+                      <tr class="border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">DSID, IDE</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google DoubleClick</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Publicació d'anuncis personalitzats segons el perfil de l'usuari.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">1 any</td>
+                      </tr>
+                      <tr class="bg-slate-50/50 dark:bg-slate-900/30">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">GTM-*</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Tag Manager</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Desplegament eficient d'scripts i codi a la web.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Sessió</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Com gestionar i eliminar les cookies</h2>
+                <p>Tens dret a acceptar o desactivar les cookies. La majoria dels navegadors permeten configurar les cookies a través de les opcions de configuració. Recorda que desactivar-ne algunes pot interferir amb el correcte funcionament tècnic del Lloc.</p>
+                <p>Per configurar el teu navegador, pots seguir les instruccions oficials:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Google Chrome</a></li>
+                  <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Mozilla Firefox</a></li>
+                  <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Apple Safari</a></li>
+                  <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Microsoft Edge</a></li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Exclusió voluntària de la publicitat personalitzada</h2>
+                <p>Pots desactivar la personalització d'anuncis de Google i altres plataformes mitjançant les següents plataformes de control sectorials:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li>Configura les teves preferències a Google: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuració d'Anuncis de Google</a>.</li>
+                  <li>Gestiona la personalització en diverses xarxes a: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Digital Advertising Alliance</a>.</li>
+                  <li>Portal d'exclusió de Network Advertising Initiative (NAI): <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">NAI Consumer Opt-Out</a>.</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Canvis en la present política</h2>
+                <p>Podem modificar aquesta Política de Cookies per adaptar-la a noves normatives o canvis tècnics de la web. Recomanem revisar aquesta pàgina de manera periòdica.</p>
+              </section>
+            </>
+          ) : (
+            <>
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. ¿Qué son las cookies?</h2>
+                <p>Las cookies son pequeños archivos de texto que los sitios web guardan en tu ordenador o dispositivo móvil al visitarlos. Se utilizan ampliamente para que las páginas web funcionen o lo hagan de manera más eficiente, así como para proporcionar información estadística y de optimización a los propietarios de la web.</p>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Tipos de cookies que utilizamos</h2>
+                <p>En Ads Calculator, utilizamos cookies para personalizar la publicidad, analizar el tráfico web y ofrecer determinadas funcionalidades técnicas. Este es el detalle de las cookies activas en nuestro Sitio:</p>
+
+                <div class="overflow-x-auto my-6">
+                  <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+                    <thead>
+                      <tr class="bg-slate-50 dark:bg-slate-900/80 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800">
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Nombre</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Proveedor</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Finalidad</th>
+                        <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Duración</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_ga, _ga_*</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Analytics</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Recopila datos de navegación anónimos para analítica web.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">2 años</td>
+                      </tr>
+                      <tr class="bg-slate-50/50 dark:bg-slate-900/30 border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_gcl_au</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google AdSense</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Seguimiento de conversiones publicitarias y rendimiento de anuncios.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">3 meses</td>
+                      </tr>
+                      <tr class="border-b border-slate-200 dark:border-slate-800">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">DSID, IDE</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google DoubleClick</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Publicación de anuncios personalizados según el perfil del usuario.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">1 año</td>
+                      </tr>
+                      <tr class="bg-slate-50/50 dark:bg-slate-900/30">
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">GTM-*</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Tag Manager</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Despliegue eficiente de scripts y código en la web.</td>
+                        <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Sesión</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Cómo gestionar y eliminar las cookies</h2>
+                <p>Tienes derecho a aceptar o desactivar las cookies. La mayoría de los navegadores permiten configurar las cookies a través de las opciones de configuración. Recuerda que desactivar algunas puede interferir con el correcto funcionamiento técnico del Sitio.</p>
+                <p>Para configurar tu navegador, puedes seguir las instrucciones oficiales:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Google Chrome</a></li>
+                  <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Mozilla Firefox</a></li>
+                  <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Apple Safari</a></li>
+                  <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Microsoft Edge</a></li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Exclusión voluntaria de la publicidad personalizada</h2>
+                <p>Puedes desactivar la personalización de anuncios de Google y otras plataformas mediante las siguientes plataformas de control sectoriales:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                  <li>Configura tus preferencias en Google: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuración de Anuncios de Google</a>.</li>
+                  <li>Gestiona la personalización en varias redes en: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Digital Advertising Alliance</a>.</li>
+                  <li>Portal de exclusión de Network Advertising Initiative (NAI): <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">NAI Consumer Opt-Out</a>.</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Cambios en la presente política</h2>
+                <p>Podemos modificar esta Política de Cookies para adaptarla a nuevas normativas o cambios técnicos de la web. Recomendamos revisar esta página de manera periódica.</p>
+              </section>
+            </>
+          )}
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              Ads <span class="text-blue-600 italic">Calculator</span>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+           <a href={isCa ? "/ca/blog" : "/es/blog"} title={isCa ? "Veure tots els articles del blog" : "Ver todos los artículos del blog"} class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href={isCa ? "/ca/privacy" : "/es/privacy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : 'Privacidad'}</a>
+           <a href={isCa ? "/ca/legal" : "/es/legal"} class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href={isCa ? "/ca/cookies" : "/es/cookies"} class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href={isCa ? "/ca/contact" : "/es/contact"} class="hover:text-blue-600 transition-colors">{isCa ? 'Contacte' : 'Contacto'}</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

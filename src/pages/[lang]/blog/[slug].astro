@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import '../../../styles/global.css';
+import blogTranslations from '../../../utils/blog-translations.json';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -25,10 +26,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { lang } = Astro.params;
+const { lang } = Astro.params as { lang: 'en' | 'es' | 'ca' };
 const { Content } = await entry.render();
 
 const isCa = lang === 'ca';
+
+// Resolve correct translated slugs for alternate links
+const currentSlug = Astro.params.slug;
+const translationGroup = Object.values(blogTranslations).find(t => t[lang] === currentSlug) || {
+  en: currentSlug,
+  es: currentSlug,
+  ca: currentSlug
+};
 ---
 
 <html lang={lang}>
@@ -39,12 +48,12 @@ const isCa = lang === 'ca';
     <meta name="description" content={entry.data.description} />
     {entry.data.keywords && <meta name="keywords" content={entry.data.keywords} />}
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`https://adsroicalc.com/${lang}/blog/${Astro.params.slug}`} />
+    <link rel="canonical" href={`https://adsroicalc.com/${lang}/blog/${translationGroup[lang]}`} />
     
-    <link rel="alternate" hreflang="en" href={`https://adsroicalc.com/blog/${Astro.params.slug}`} />
-    <link rel="alternate" hreflang="es" href={`https://adsroicalc.com/es/blog/${Astro.params.slug}`} />
-    <link rel="alternate" hreflang="ca" href={`https://adsroicalc.com/ca/blog/${Astro.params.slug}`} />
-    <link rel="alternate" hreflang="x-default" href={`https://adsroicalc.com/blog/${Astro.params.slug}`} />
+    <link rel="alternate" hreflang="en" href={`https://adsroicalc.com/blog/${translationGroup.en}`} />
+    <link rel="alternate" hreflang="es" href={`https://adsroicalc.com/es/blog/${translationGroup.es}`} />
+    <link rel="alternate" hreflang="ca" href={`https://adsroicalc.com/ca/blog/${translationGroup.ca}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://adsroicalc.com/blog/${translationGroup.en}`} />
 
     <meta name="viewport" content="width=device-width" />
 

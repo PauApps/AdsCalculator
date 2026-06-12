@@ -1,75 +1,146 @@
 ---
 import '../styles/global.css';
+
+const lang = 'en';
 const title = 'Legal Notice | Ads Calculator';
-const description = 'Legal Notice of Ads Calculator. Information about the operator, terms of use, and legal disclaimer.';
+const description = 'Legal Notice and Terms of Use for Ads Calculator. Operator identification, user conditions, intellectual property details, and liability disclaimers.';
+const keywords = 'legal notice, terms of use, ads calculator legal, operator info, disclaimer';
 ---
-<html lang="en">
+
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://adsroicalc.com/legal" />
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/legal" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/legal" />
+    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/legal" />
+    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/legal" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q73D3FT2VL');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
   </head>
-  <body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200">
-    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 px-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/" class="text-sm text-blue-600 hover:underline">← Back to calculator</a>
+  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="/" class="font-bold text-2xl tracking-tight flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          Ads <span class="text-blue-600 italic">Calculator</span>
+        </a>
+        <nav class="flex gap-3 md:gap-6 items-center">
+          <a href="/blog" class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
+          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
+            <a href="/legal" title="English version" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">EN</a>
+            <a href="/es/legal" title="Versión en español" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">ES</a>
+            <a href="/ca/legal" title="Versió en català" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">CA</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16">
-      <h1 class="text-4xl font-extrabold mb-2 text-slate-900 dark:text-white">Legal Notice</h1>
-      <p class="text-slate-500 text-sm mb-10">Last updated: April 2026</p>
+    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">Legal Notice</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">Last updated: June 2026</p>
 
-      <div class="prose dark:prose-invert max-w-none space-y-8">
+        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Website Operator & Owner Information</h2>
+            <p>In accordance with information society services regulations, users are informed that this website, <strong>adsroicalc.com</strong> (hereinafter referred to as the "Site"), is owned and operated by <strong>PauApps</strong>.</p>
+            <p>For inquiries, questions, or formal contact, users can reach us at our main administrative email: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">1. Website Operator</h2>
-          <p>This website, <strong>adsroicalc.com</strong> (hereinafter "the Site"), is operated by the owner of Ads Calculator.</p>
-          <p>Contact: <a href="mailto:info@adsroicalc.com" class="text-blue-600 hover:underline">info@adsroicalc.com</a></p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Purpose of the Site</h2>
+            <p>The Site serves exclusively as a digital platform offering calculation tools tailored to advertising, business ROI, and growth marketing metrics. The calculators, charts, and associated features are designed to help digital marketers analyze campaigns, breakeven thresholds, and overall advertisement profit indicators.</p>
+            <p>Accessing the Site is free, voluntary, and implies immediate agreement with the terms and disclaimers detailed herein.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">2. Purpose of the Site</h2>
-          <p>Ads Calculator is a free online tool that enables users to calculate ROAS (Return on Ad Spend), ROI (Return on Investment), CPA (Cost per Acquisition), and the breakeven point for digital advertising campaigns. All calculations are performed client-side and no data is transmitted to our servers.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Disclaimer of Liability</h2>
+            <p>The calculations and simulations provided by the tools on this Site are for <strong>informational, illustrative, and educational purposes only</strong>. The values and results are estimates based on user-inputted numbers and do not guarantee actual business performance or tax/financial exactitude.</p>
+            <p>Consequently, the operator of the Site shall not be held liable for:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Decisions or actions taken by users or third parties based on the results generated by the Site's calculators.</li>
+              <li>Any financial or marketing losses, budget overruns, or operational failures arising from the use of the calculators.</li>
+              <li>Errors, inaccuracies, or programmatic bugs that might occur during client-side calculations or chart rendering.</li>
+              <li>Temporary technical issues, downtime, or lack of availability of the Site.</li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">3. Disclaimer of Liability</h2>
-          <p>The results provided by this calculator are for <strong>informational and educational purposes only</strong>. They do not constitute financial, accounting, or legal advice. The operator accepts no responsibility for decisions made based on the data provided by the tool.</p>
-          <p>While we strive to ensure accuracy, we cannot guarantee that the calculations are free from errors or that they reflect actual business outcomes.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Intellectual and Industrial Property</h2>
+            <p>All content, branding, design code, icons, logos, graphic design layouts, scripts, text documentation, and calculation logic displayed on the Site are the exclusive intellectual property of the operator (PauApps) or its licensed providers, protected by national and international copyright laws.</p>
+            <p>Any reproduction, distribution, public transmission, transformation, or exploitation of the code or content of this Site without the express prior written consent of the owner is strictly prohibited.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">4. Intellectual Property</h2>
-          <p>All content on this site, including but not limited to text, graphics, code, and design, is the property of the site operator and is protected by applicable intellectual property laws. Reproduction without express permission is prohibited.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Rules of Use</h2>
+            <p>Users agree to use the Site in accordance with the law, decency, public order, and these conditions. Users will refrain from using the Site for illicit purposes, or in any way that damages, disables, overburdens, or prevents the normal operation of the service for other users.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">5. External Links</h2>
-          <p>This site may contain links to third-party websites. We are not responsible for the content or privacy practices of those external sites. Access to them is at the user's own risk.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. External Links & Advertisements</h2>
+            <p>The Site contains advertisements served by Google AdSense and may contain links to third-party portals or resources. The operator has no control over these external sites, does not endorse them, and accepts no liability for their contents, terms, or privacy policies. Accessing external links is done solely at the user's own risk.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">6. Governing Law</h2>
-          <p>This Legal Notice is governed by applicable law. Any dispute arising from its interpretation shall be submitted to the competent courts.</p>
-        </section>
-
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Jurisdiction and Applicable Law</h2>
+            <p>This Legal Notice and the relations between the user and the operator shall be governed by Spanish law. For any conflict or dispute arising from the interpretation or breach of these terms, both parties submit to the jurisdiction of the competent courts of the operator's domicile, unless otherwise mandated by consumer protection regulations.</p>
+          </section>
+        </div>
       </div>
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 px-6 text-center text-sm text-slate-500">
-      <p>© 2026 Ads Calculator. All rights reserved. |
-        <a href="/privacy" class="hover:text-blue-600 mx-2">Privacy Policy</a> |
-        <a href="/legal" class="hover:text-blue-600 mx-2">Legal Notice</a> |
-        <a href="/cookies" class="hover:text-blue-600 mx-2">Cookie Policy</a>
-      </p>
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              Ads <span class="text-blue-600 italic">Calculator</span>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. All rights reserved.</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+           <a href="/blog" title="See all blog posts" class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href="/privacy" title="Privacy Policy" class="hover:text-blue-600 transition-colors">Privacy</a>
+           <a href="/legal" title="Legal Notice" class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href="/cookies" title="Cookie Policy" class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href="/contact" title="Contact Us" class="hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

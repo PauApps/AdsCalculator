@@ -1,0 +1,22 @@
+{
+  "breakeven-roas": {
+    "en": "breakeven-roas",
+    "es": "roas-de-punto-de-equilibrio",
+    "ca": "roas-de-punt-de-equilibri"
+  },
+  "performance-vs-growth": {
+    "en": "performance-vs-growth",
+    "es": "performance-vs-growth",
+    "ca": "performance-vs-growth"
+  },
+  "roi-mistakes": {
+    "en": "roi-mistakes",
+    "es": "errores-roi-ads",
+    "ca": "errors-roi-ads"
+  },
+  "what-is-roas": {
+    "en": "what-is-roas",
+    "es": "que-es-el-roas",
+    "ca": "que-es-el-roas"
+  }
+}

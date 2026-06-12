@@ -1,93 +1,151 @@
 ---
 import '../styles/global.css';
+
+const lang = 'en';
 const title = 'Privacy Policy | Ads Calculator';
-const description = 'Privacy Policy of Ads Calculator. Learn how we handle your data, cookies, and compliance with GDPR and Google AdSense policies.';
+const description = 'Privacy Policy of Ads Calculator. Learn how we handle your data, cookies, and compliance with GDPR, CCPA, and Google AdSense policies.';
+const keywords = 'privacy policy, ads calculator privacy, data compliance, gdpr compliance, adsense privacy policy';
 ---
-<html lang="en">
+
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://adsroicalc.com/privacy" />
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/privacy" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/privacy" />
+    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/privacy" />
+    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/privacy" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q73D3FT2VL');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
   </head>
-  <body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200">
-    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 px-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/" class="text-sm text-blue-600 hover:underline">← Back to calculator</a>
+  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="/" class="font-bold text-2xl tracking-tight flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          Ads <span class="text-blue-600 italic">Calculator</span>
+        </a>
+        <nav class="flex gap-3 md:gap-6 items-center">
+          <a href="/blog" class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
+          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
+            <span class="px-2 py-1 rounded-md bg-blue-600 text-white shadow-lg shadow-blue-600/25">EN</span>
+            <a href="/es/privacy" title="Versión en español" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">ES</a>
+            <a href="/ca/privacy" title="Versió en català" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">CA</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16">
-      <h1 class="text-4xl font-extrabold mb-2 text-slate-900 dark:text-white">Privacy Policy</h1>
-      <p class="text-slate-500 text-sm mb-10">Last updated: April 2026</p>
+    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">Privacy Policy</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">Last updated: June 2026</p>
 
-      <div class="prose dark:prose-invert max-w-none space-y-8">
+        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Information About the Site Operator</h2>
+            <p>The website <strong>adsroicalc.com</strong> (hereinafter referred to as the "Site" or "Ads Calculator") is operated by <strong>PauApps</strong>. We are dedicated to providing marketing professionals, growth marketers, and business owners with accurate calculation tools for Return on Ad Spend (ROAS), Return on Investment (ROI), cost-per-acquisition (CPA), and breakeven performance points.</p>
+            <p>For any enquiries regarding this Privacy Policy or how your data is handled, you can reach out directly via email: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">1. Who we are</h2>
-          <p>Ads Calculator (<strong>adsroicalc.com</strong>) is a free online tool designed to help marketers and business owners calculate ROAS, ROI, and breakeven points for their advertising campaigns. We are committed to protecting your privacy.</p>
-          <p>For any privacy-related enquiries, contact us at: <a href="mailto:info@adsroicalc.com" class="text-blue-600 hover:underline">info@adsroicalc.com</a></p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. No Direct Data Collection</h2>
+            <p>At Ads Calculator, your privacy is paramount. <strong>We do not collect, store, or transmit any data that you enter into our calculation tools.</strong> All calculations are executed locally and directly within your web browser (client-side). None of your financial, product cost, ad spend, or revenue inputs are sent to our servers or stored by us.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">2. What data we collect</h2>
-          <p>Ads Calculator does <strong>not collect, store, or transmit any personal data</strong> entered into the calculator. All calculations are performed locally in your browser.</p>
-          <p>However, we do use third-party services that may collect anonymous usage data:</p>
-          <ul class="list-disc pl-6 space-y-1">
-            <li><strong>Google Analytics 4</strong>: Collects anonymized data about page visits, session duration, and general geographic location. No personally identifiable information (PII) is recorded.</li>
-            <li><strong>Google Tag Manager</strong>: Used to manage analytics scripts on our site.</li>
-            <li><strong>Google AdSense</strong>: We participate in the Google AdSense program, which displays advertisements on our site. Google may use cookies to show you relevant ads based on your browsing history.</li>
-          </ul>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Third-Party Services and Analytics</h2>
+            <p>While we do not collect personal data directly, we use third-party services that set cookies and gather anonymous usage statistics to help us monitor performance, improve user experience, and fund our operations:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>Google Analytics 4 (GA4):</strong> We use GA4 to compile anonymous statistics about visits, pages viewed, user devices, and general geographic location. It does not record personally identifiable information (PII).</li>
+              <li><strong>Google Tag Manager (GTM):</strong> Used to safely deploy and manage code snippets and scripts on our Site.</li>
+              <li><strong>Google AdSense:</strong> We display advertisements served by Google AdSense to generate revenue to maintain this free resource. Google AdSense uses cookies to deliver relevant ads based on your preferences and browsing history.</li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">3. Cookies</h2>
-          <p>We use cookies for the following purposes:</p>
-          <ul class="list-disc pl-6 space-y-1">
-            <li><strong>Analytics cookies</strong>: Google Analytics uses cookies to track anonymous usage statistics.</li>
-            <li><strong>Advertising cookies</strong>: Google AdSense uses cookies to display personalized advertisements. You can opt out of personalized advertising at <a href="https://adssettings.google.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener">adssettings.google.com</a>.</li>
-          </ul>
-          <p>You can manage cookies through your browser settings. Disabling cookies may reduce site functionality.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Google AdSense & Personalized Advertising Disclosure</h2>
+            <p>Google AdSense is a third-party vendor that uses cookies to serve ads on our Site. Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visits to this Site and/or other sites on the Internet.</p>
+            <p>Users may opt out of personalized advertising by visiting Google's ad settings:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>To manage your personalized ad settings, visit: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Google Ads Settings</a></li>
+              <li>Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">About Ads Choices</a></li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">4. Google AdSense and Third-Party Advertising</h2>
-          <p>We use Google AdSense to display advertisements. Google, as a third-party vendor, uses cookies to serve ads based on a user's prior visits to this and other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the Internet.</p>
-          <p>You may opt out of personalized advertising by visiting <a href="https://www.aboutads.info/choices/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">www.aboutads.info/choices/</a>.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Cookie Policy</h2>
+            <p>We use both first-party and third-party cookies for site functionality, analytics, and advertising. For a complete list of cookies, their purposes, and how to manage or disable them, please consult our dedicated <a href="/cookies" class="text-blue-600 dark:text-blue-400 hover:underline">Cookie Policy</a>.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">5. Your rights (GDPR)</h2>
-          <p>If you are located in the European Economic Area, you have the following rights:</p>
-          <ul class="list-disc pl-6 space-y-1">
-            <li>Right to access any personal data we hold about you.</li>
-            <li>Right to erasure of your data.</li>
-            <li>Right to restrict or object to processing.</li>
-            <li>Right to data portability.</li>
-          </ul>
-          <p>To exercise these rights, contact us at <a href="mailto:info@adsroicalc.com" class="text-blue-600 hover:underline">info@adsroicalc.com</a>.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. User Rights (GDPR & CCPA Compliance)</h2>
+            <p>Depending on your location, you may have specific data protection rights under regulations like the General Data Protection Regulation (GDPR) for EEA residents, and the California Consumer Privacy Act (CCPA) for California residents:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong>GDPR (EEA):</strong> You have the right to access, rectify, or erase any anonymous logs associated with your IP address, or object to processing. Because we do not store PII, we have no identifiable records, but you can exercise your rights by contacting <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</li>
+              <li><strong>CCPA/CPRA (California):</strong> You have the right to request disclosure of what personal information is collected/sold and opt out of the sale or sharing of your personal info. As mentioned, we do not collect personal data directly; Google AdSense personalized ads can be opted out using the settings mentioned in Section 4.</li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">6. Changes to this policy</h2>
-          <p>We may update this Privacy Policy from time to time. We encourage you to review this page periodically. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
-        </section>
-
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Policy Updates</h2>
+            <p>We reserve the right to modify this Privacy Policy at any time. Changes will be posted immediately on this page with an updated date. Your continued use of the Site following updates constitutes your formal acceptance of the modified terms.</p>
+          </section>
+        </div>
       </div>
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 px-6 text-center text-sm text-slate-500">
-      <p>© 2026 Ads Calculator. All rights reserved. |
-        <a href="/privacy" class="hover:text-blue-600 mx-2">Privacy Policy</a> |
-        <a href="/legal" class="hover:text-blue-600 mx-2">Legal Notice</a> |
-        <a href="/cookies" class="hover:text-blue-600 mx-2">Cookie Policy</a>
-      </p>
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              Ads <span class="text-blue-600 italic">Calculator</span>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. All rights reserved.</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+           <a href="/blog" title="See all blog posts" class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href="/privacy" title="Privacy Policy" class="hover:text-blue-600 transition-colors">Privacy</a>
+           <a href="/legal" title="Legal Notice" class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href="/cookies" title="Cookie Policy" class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href="/contact" title="Contact Us" class="hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

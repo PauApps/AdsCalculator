@@ -188,6 +188,20 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"ca/errors-roi-ads.md": {
+	id: "ca/errors-roi-ads.md";
+  slug: "ca/errors-roi-ads";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"ca/performance-vs-growth.md": {
+	id: "ca/performance-vs-growth.md";
+  slug: "ca/performance-vs-growth";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "ca/que-es-el-roas.md": {
 	id: "ca/que-es-el-roas.md";
   slug: "ca/que-es-el-roas";
@@ -195,9 +209,65 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"ca/roas-de-punt-de-equilibri.md": {
+	id: "ca/roas-de-punt-de-equilibri.md";
+  slug: "ca/roas-de-punt-de-equilibri";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/breakeven-roas.md": {
+	id: "en/breakeven-roas.md";
+  slug: "en/breakeven-roas";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/performance-vs-growth.md": {
+	id: "en/performance-vs-growth.md";
+  slug: "en/performance-vs-growth";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/roi-mistakes.md": {
+	id: "en/roi-mistakes.md";
+  slug: "en/roi-mistakes";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"en/what-is-roas.md": {
+	id: "en/what-is-roas.md";
+  slug: "en/what-is-roas";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/errores-roi-ads.md": {
+	id: "es/errores-roi-ads.md";
+  slug: "es/errores-roi-ads";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/performance-vs-growth.md": {
+	id: "es/performance-vs-growth.md";
+  slug: "es/performance-vs-growth";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "es/que-es-el-roas.md": {
 	id: "es/que-es-el-roas.md";
   slug: "es/que-es-el-roas";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/roas-de-punto-de-equilibrio.md": {
+	id: "es/roas-de-punto-de-equilibrio.md";
+  slug: "es/roas-de-punto-de-equilibrio";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

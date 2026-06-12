@@ -1,115 +1,177 @@
 ---
 import '../styles/global.css';
+
+const lang = 'en';
 const title = 'Cookie Policy | Ads Calculator';
-const description = 'Cookie Policy for Ads Calculator. Learn what cookies we use, why, and how you can manage your preferences.';
+const description = 'Cookie Policy for Ads Calculator. Learn what cookies we use, why, and how you can manage or disable your preferences.';
+const keywords = 'cookie policy, ads calculator cookies, manage cookies, analytics cookies, advertising cookies';
 ---
-<html lang="en">
+
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://adsroicalc.com/cookies" />
+    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/cookies" />
+    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/cookies" />
+    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/cookies" />
+    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/cookies" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q73D3FT2VL');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
   </head>
-  <body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200">
-    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 px-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" class="font-bold text-xl">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/" class="text-sm text-blue-600 hover:underline">← Back to calculator</a>
+  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="/" class="font-bold text-2xl tracking-tight flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          Ads <span class="text-blue-600 italic">Calculator</span>
+        </a>
+        <nav class="flex gap-3 md:gap-6 items-center">
+          <a href="/blog" class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
+          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
+            <a href="/cookies" title="English version" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">EN</a>
+            <a href="/es/cookies" title="Versión en español" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">ES</a>
+            <a href="/ca/cookies" title="Versió en català" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">CA</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16">
-      <h1 class="text-4xl font-extrabold mb-2 text-slate-900 dark:text-white">Cookie Policy</h1>
-      <p class="text-slate-500 text-sm mb-10">Last updated: April 2026</p>
+    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">Cookie Policy</h1>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">Last updated: June 2026</p>
 
-      <div class="prose dark:prose-invert max-w-none space-y-8">
+        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. What are Cookies?</h2>
+            <p>Cookies are small text files that websites save to your computer or mobile device when you visit them. They are widely used to make websites work, or work more efficiently, as well as to provide reporting and marketing optimization statistics to the site owners.</p>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">1. What are cookies?</h2>
-          <p>Cookies are small text files stored on your device when you visit a website. They help sites remember your preferences and gather anonymous statistics to improve the user experience.</p>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Types of Cookies We Use</h2>
+            <p>At Ads Calculator, we use cookies to personalize advertisements, analyze traffic, and ensure technical functionality. The cookies active on our Site fall into the following categories:</p>
+            
+            <div class="overflow-x-auto my-6">
+              <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-900/80 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800">
+                    <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Cookie Name</th>
+                    <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Provider</th>
+                    <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Purpose</th>
+                    <th class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-left font-bold">Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-slate-200 dark:border-slate-800">
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_ga, _ga_*</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Analytics</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Tracks anonymous usage metrics and site visits.</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">2 Years</td>
+                  </tr>
+                  <tr class="bg-slate-50/50 dark:bg-slate-900/30 border-b border-slate-200 dark:border-slate-800">
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">_gcl_au</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google AdSense</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Tracks advertising conversions and campaign performance.</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">3 Months</td>
+                  </tr>
+                  <tr class="border-b border-slate-200 dark:border-slate-800">
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">DSID, IDE</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google DoubleClick</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Serves targeted ads based on prior user web browsing.</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">1 Year</td>
+                  </tr>
+                  <tr class="bg-slate-50/50 dark:bg-slate-900/30">
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 font-mono text-xs">GTM-*</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3 text-slate-600 dark:text-slate-400">Google Tag Manager</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Facilitates deployment of analytical scripts.</td>
+                    <td class="border border-slate-200 dark:border-slate-800 px-4 py-3">Session</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">2. Cookies we use</h2>
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm border-collapse border border-slate-200 dark:border-slate-700 mt-4">
-              <thead>
-                <tr class="bg-slate-100 dark:bg-slate-800">
-                  <th class="border border-slate-200 dark:border-slate-700 px-4 py-2 text-left">Cookie</th>
-                  <th class="border border-slate-200 dark:border-slate-700 px-4 py-2 text-left">Provider</th>
-                  <th class="border border-slate-200 dark:border-slate-700 px-4 py-2 text-left">Purpose</th>
-                  <th class="border border-slate-200 dark:border-slate-700 px-4 py-2 text-left">Duration</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">_ga, _ga_*</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Google Analytics</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Anonymous usage statistics</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">2 years</td>
-                </tr>
-                <tr class="bg-slate-50 dark:bg-slate-900/50">
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">_gcl_au</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Google AdSense</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Ad conversion tracking</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">3 months</td>
-                </tr>
-                <tr>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">DSID, IDE</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Google DoubleClick</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Personalized advertising</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">1 year</td>
-                </tr>
-                <tr class="bg-slate-50 dark:bg-slate-900/50">
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">GTM-*</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Google Tag Manager</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Script management</td>
-                  <td class="border border-slate-200 dark:border-slate-700 px-4 py-2">Session</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. How Can You Manage Cookies?</h2>
+            <p>You have the absolute right to accept, configure, or refuse cookies. Most web browsers allow you to control cookies through their configuration settings. Disabling cookies might affect your experience and limit some technical functionalities of the Site.</p>
+            <p>To configure your specific browser, visit the official guidelines:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Google Chrome Help</a></li>
+              <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Mozilla Firefox Help</a></li>
+              <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Apple Safari Help</a></li>
+              <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Microsoft Edge Help</a></li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">3. How to manage cookies</h2>
-          <p>You can control and delete cookies through your browser settings. Here are direct links for major browsers:</p>
-          <ul class="list-disc pl-6 space-y-1">
-            <li><a href="https://support.google.com/chrome/answer/95647" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Google Chrome</a></li>
-            <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Mozilla Firefox</a></li>
-            <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Apple Safari</a></li>
-            <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Microsoft Edge</a></li>
-          </ul>
-        </section>
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Opt-Out of Personalized Advertising</h2>
+            <p>You can adjust your Google Ads settings and choose to opt out of interest-based ads. To opt-out across participating ad platforms, use these resources:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Configure Google Ads personalization preferences at: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Google Ad Personalization Settings</a>.</li>
+              <li>Manage cookie personalization across diverse networks via: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Digital Advertising Alliance Opt-Out Page</a>.</li>
+              <li>Opt-out through the Network Advertising Initiative: <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">NAI Consumer Opt-Out Portal</a>.</li>
+            </ul>
+          </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3">4. Opt-out of personalized advertising</h2>
-          <p>You can opt out of Google's personalized advertising by visiting:</p>
-          <ul class="list-disc pl-6 space-y-1">
-            <li><a href="https://adssettings.google.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Google Ad Settings</a></li>
-            <li><a href="https://www.aboutads.info/choices/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">Network Advertising Initiative opt-out</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-bold mb-3">5. Contact</h2>
-          <p>For any questions about our use of cookies, please contact us at <a href="mailto:info@adsroicalc.com" class="text-blue-600 hover:underline">info@adsroicalc.com</a>.</p>
-        </section>
-
+          <section>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Policy Revisions</h2>
+            <p>We may update this Cookie Policy from time to time in response to operational changes or legal requirements. We recommend reviewing this document regularly to remain informed about our cookie usage.</p>
+          </section>
+        </div>
       </div>
     </main>
 
-    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 px-6 text-center text-sm text-slate-500">
-      <p>© 2026 Ads Calculator. All rights reserved. |
-        <a href="/privacy" class="hover:text-blue-600 mx-2">Privacy Policy</a> |
-        <a href="/legal" class="hover:text-blue-600 mx-2">Legal Notice</a> |
-        <a href="/cookies" class="hover:text-blue-600 mx-2">Cookie Policy</a>
-      </p>
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              Ads <span class="text-blue-600 italic">Calculator</span>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. All rights reserved.</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+           <a href="/blog" title="See all blog posts" class="hover:text-blue-600 transition-colors">Blog</a>
+           <a href="/privacy" title="Privacy Policy" class="hover:text-blue-600 transition-colors">Privacy</a>
+           <a href="/legal" title="Legal Notice" class="hover:text-blue-600 transition-colors">Legal</a>
+           <a href="/cookies" title="Cookie Policy" class="hover:text-blue-600 transition-colors">Cookies</a>
+           <a href="/contact" title="Contact Us" class="hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
