@@ -1,6 +1,6 @@
 ---
 import { getPublishedPosts } from '../../utils/blog';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import blogTranslations from '../../utils/blog-translations.json';
 
 export async function getStaticPaths() {
@@ -22,79 +22,38 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 const lang = 'en';
-
-// Resolve correct translated slugs for alternate links
 const currentSlug = Astro.params.slug;
-const translationGroup = Object.values(blogTranslations).find(t => t.en === currentSlug) || {
-  en: currentSlug,
-  es: currentSlug,
-  ca: currentSlug
+
+// Find translation mapping
+const postKey = Object.keys(blogTranslations).find(key => {
+  const t = (blogTranslations as any)[key];
+  return t.en === currentSlug;
+});
+
+const customAlternates = postKey ? {
+  en: `/blog/${(blogTranslations as any)[postKey].en}`,
+  es: `/es/blog/${(blogTranslations as any)[postKey].es}`,
+  ca: `/ca/blog/${(blogTranslations as any)[postKey].ca}`
+} : {
+  en: `/blog/${currentSlug}`,
+  es: `/es/blog`,
+  ca: `/ca/blog`
 };
 ---
 
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{entry.data.title} | Ads Calculator</title>
-    <meta name="description" content={entry.data.description} />
-    {entry.data.keywords && <meta name="keywords" content={entry.data.keywords} />}
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`https://adsroicalc.com/blog/${translationGroup.en}`} />
-    
-    <link rel="alternate" hreflang="en" href={`https://adsroicalc.com/blog/${translationGroup.en}`} />
-    <link rel="alternate" hreflang="es" href={`https://adsroicalc.com/es/blog/${translationGroup.es}`} />
-    <link rel="alternate" hreflang="ca" href={`https://adsroicalc.com/ca/blog/${translationGroup.ca}`} />
-    <link rel="alternate" hreflang="x-default" href={`https://adsroicalc.com/blog/${translationGroup.en}`} />
-
-    <meta name="viewport" content="width=device-width" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-Q73D3FT2VL');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
-  </head>
-  <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 p-6">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" title="Go to home page" class="font-bold text-2xl tracking-tight">Ads <span class="text-blue-600 italic">Calculator</span></a>
-        <a href="/blog" title="Back to blog" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-xl">← Back to Blog</a>
+<Layout title={`${entry.data.title} | Ads Calculator`} description={entry.data.description} keywords={entry.data.keywords} lang={lang} customAlternates={customAlternates}>
+  <main class="flex-grow py-16 px-6">
+    <article class="max-w-3xl mx-auto">
+      <header class="mb-12 text-center">
+         <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900 dark:text-white leading-tight">{entry.data.title}</h1>
+         <p class="text-xl text-slate-500 dark:text-slate-400 italic max-w-2xl mx-auto">{entry.data.description}</p>
+      </header>
+      <div class="prose dark:prose-invert mx-auto border-t border-slate-100 dark:border-slate-900 pt-10">
+          <Content />
       </div>
-    </header>
-
-    <main class="flex-grow py-16 px-6">
-      <article class="max-w-3xl mx-auto">
-        <header class="mb-12 text-center">
-             <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-slate-900 dark:text-white leading-tight">{entry.data.title}</h1>
-             <p class="text-xl text-slate-500 dark:text-slate-400 italic max-w-2xl mx-auto">{entry.data.description}</p>
-        </header>
-        <div class="prose dark:prose-invert mx-auto border-t border-slate-100 dark:border-slate-900 pt-10">
-            <Content />
-        </div>
-      </article>
-    </main>
-
-    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 text-center text-slate-500 text-sm">
-        <p>© 2026 Ads Calculator. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+      <div class="mt-12 text-center">
+        <a href="/blog" title="Back to blog" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors bg-blue-50 dark:bg-blue-900/30 px-4 py-2 rounded-xl">← Back to Blog</a>
+      </div>
+    </article>
+  </main>
+</Layout>

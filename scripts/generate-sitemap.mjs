@@ -99,7 +99,7 @@ try {
     { path: '/ca/legal', priority: '0.5', alternates: legalAlternates }
   );
 
-  // 7. Blog Posts dynamically mapped from translations file
+  // 7. Blog Posts dynamically mapped from translations file & scanned from files
   const spainToday = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
 
   function isPublished(lang, slug) {
@@ -118,6 +118,30 @@ try {
     return dateStr <= spainToday;
   }
 
+  // Scan all directories for published posts
+  const languages = ['en', 'es', 'ca'];
+  const postsByLang = { en: [], es: [], ca: [] };
+
+  for (const lang of languages) {
+    const dirPath = path.join('./src/content/blog', lang);
+    if (fs.existsSync(dirPath)) {
+      const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.md'));
+      for (const file of files) {
+        const slug = file.replace('.md', '');
+        if (isPublished(lang, slug)) {
+          postsByLang[lang].push(slug);
+        }
+      }
+    }
+  }
+
+  const processedPosts = {
+    en: new Set(),
+    es: new Set(),
+    ca: new Set()
+  };
+
+  // Group translated posts
   for (const [key, group] of Object.entries(blogTranslations)) {
     const alternates = [];
     
@@ -125,9 +149,18 @@ try {
     const esPub = group.es && isPublished('es', group.es);
     const caPub = group.ca && isPublished('ca', group.ca);
 
-    if (enPub) alternates.push({ lang: 'en', path: `/blog/${group.en}` });
-    if (esPub) alternates.push({ lang: 'es', path: `/es/blog/${group.es}` });
-    if (caPub) alternates.push({ lang: 'ca', path: `/ca/blog/${group.ca}` });
+    if (enPub) {
+      alternates.push({ lang: 'en', path: `/blog/${group.en}` });
+      processedPosts.en.add(group.en);
+    }
+    if (esPub) {
+      alternates.push({ lang: 'es', path: `/es/blog/${group.es}` });
+      processedPosts.es.add(group.es);
+    }
+    if (caPub) {
+      alternates.push({ lang: 'ca', path: `/ca/blog/${group.ca}` });
+      processedPosts.ca.add(group.ca);
+    }
     
     // Add x-default pointing to the English version
     if (enPub) {
@@ -142,6 +175,30 @@ try {
     }
     if (caPub) {
       pages.push({ path: `/ca/blog/${group.ca}`, priority: '0.8', alternates });
+    }
+  }
+
+  // Add remaining untranslated (single-language) posts
+  for (const lang of languages) {
+    for (const slug of postsByLang[lang]) {
+      if (!processedPosts[lang].has(slug)) {
+        const pathStr = lang === 'en' ? `/blog/${slug}` : `/${lang}/blog/${slug}`;
+        
+        const alternates = [
+          { lang, path: pathStr }
+        ];
+        if (lang === 'en') {
+          alternates.push({ lang: 'x-default', path: pathStr });
+        }
+        
+        pages.push({
+          path: pathStr,
+          priority: '0.8',
+          alternates
+        });
+        
+        processedPosts[lang].add(slug);
+      }
     }
   }
 
