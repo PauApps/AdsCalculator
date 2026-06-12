@@ -1,5 +1,5 @@
 ---
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
   return [
@@ -25,197 +25,115 @@ const keywords = isCa
   : 'política de privacidad, privacidad ads calculator, rgpd, cookies adsense, publicidad personalizada';
 ---
 
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`https://adsroicalc.com/${lang}/privacy`} />
-    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/privacy" />
-    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/privacy" />
-    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/privacy" />
-    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/privacy" />
+<Layout title={title} description={description} keywords={keywords} lang={lang as 'es' | 'ca'}>
+  <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
+        {isCa ? 'Política de Privacitat' : 'Política de Privacidad'}
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">
+        {isCa ? 'Última actualització: Juny de 2026' : 'Última actualización: Junio de 2026'}
+      </p>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Q73D3FT2VL');
-    </script>
+      <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+        {isCa ? (
+          <>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Informació sobre l'operador del lloc</h2>
+              <p>El lloc web <strong>adsroicalc.com</strong> (en endavant, el "Lloc" o "Ads Calculator") és operat per <strong>PauApps</strong>. Ens dediquem a proporcionar a professionals del màrqueting i propietaris de negocis eines de càlcul precises per a Retorn de la Inversió Publicitària (ROAS), Retorn de la Inversió (ROI), cost per adquisició (CPA) i punt d'equilibri (breakeven).</p>
+              <p>Per a qualsevol consulta relacionada amb aquesta Política de Privacitat o sobre com es tracten les teves dades, pots posar-te en contacte a través del correu: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+            </section>
 
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
-    <!-- End Google Tag Manager -->
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Sense recollida directa de dades personals</h2>
+              <p>A Ads Calculator, la teva privacitat és la nostra prioritat. <strong>No recopilem, emmagatzemem ni transmetem cap tipus de dada que introdueixis a les nostres eines de càlcul.</strong> Tots els càlculs s'executen de forma local i directa al teu navegador web (client-side). Cap dels teus inputs de costos, inversió o ingressos s'envia als nostres servidors.</p>
+            </section>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
-  </head>
-  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href={isCa ? "/ca" : "/es"} class="font-bold text-2xl tracking-tight flex items-center gap-2">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-          </div>
-          Ads <span class="text-blue-600 italic">Calculator</span>
-        </a>
-        <nav class="flex gap-3 md:gap-6 items-center">
-          <a href={isCa ? "/ca/blog" : "/es/blog"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
-          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
-            <a href="/privacy" title="English version" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">EN</a>
-            <span class={`px-2 py-1 rounded-md ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>ES</span>
-            <span class={`px-2 py-1 rounded-md ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>CA</span>
-          </div>
-        </nav>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Serveis de tercers i analítica</h2>
+              <p>Encara que no recollim dades directament, utilitzem serveis de tercers que instal·len cookies i recopilen estadístiques anònimes d'ús per optimitzar el funcionament i rendiment de la web:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li><strong>Google Analytics 4 (GA4):</strong> Recull dades anònimes sobre les visites, pàgines visualitzades, tipus de dispositiu i ubicació geogràfica general. No registra informació d'identificació personal (PII).</li>
+                <li><strong>Google Tag Manager (GTM):</strong> S'utilitza per gestionar i desplegar scripts i codi de manera segura en el Lloc.</li>
+                <li><strong>Google AdSense:</strong> Mostrem anuncis publicitaris mitjançant el programa Google AdSense. Google utilitza cookies per oferir anuncis personalitzats basats en les teves visites a aquesta i altres pàgines web.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Google AdSense i Publicitat Personalitzada</h2>
+              <p>Google AdSense es un proveïdor extern que utilitza cookies per publicar anuncis en aquest Lloc. L'ús de cookies publicitàries per part de Google i els seus associats permet mostrar anuncis als usuaris segons les visites que realitzen a aquest i a altres llocs d'Internet.</p>
+              <p>Els usuaris poden desactivar la publicitat personalitzada mitjançant la configuració de Google:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Per gestionar els teus paràmetres d'anuncis de Google, visita: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuració d'Anuncis de Google</a>.</li>
+                <li>Alternativament, pots desactivar l'ús de cookies per a la publicitat personalitzada d'altres proveïdors externs a través de: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">About Ads Choices</a>.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Política de Cookies</h2>
+              <p>Utilitzem cookies tècniques, analítiques i de publicitat. Per a una llista completa de les cookies utilitzades, la seva durada i com pots desactivar-les, consulta la nostra <a href={`/${lang}/cookies`} class="text-blue-600 dark:text-blue-400 hover:underline">Política de Cookies</a>.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Drets dels Usuaris (RGPD)</h2>
+              <p>Si resideixes a l'Espai Econòmic Europeu (EEE), tens dret a accedir, rectificar, limitar o sol·licitar la supressió de les teves dades segons el Reglament General de Protecció de Dades (RGPD). Com que no emmagatzemem dades personals ni formularis, no disposem de registres associats directament a tu, per raó de la qual cosa pots adreçar-te a <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a> per a qualsevol aclariment.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Actualitzacions de la política</h2>
+              <p>Ens reservem el dret de modificar aquesta política de privacitat en qualsevol moment. Els canvis s'aplicaran immediatament un cop publicats en aquesta pàgina. L'ús continuat del Lloc implica l'acceptació dels nous termes.</p>
+            </section>
+          </>
+        ) : (
+          <>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Información sobre el operador del sitio</h2>
+              <p>El sitio web <strong>adsroicalc.com</strong> (en adelante, el "Sitio" o "Ads Calculator") es operado por <strong>PauApps</strong>. Nos dedicamos a proporcionar a profesionales del marketing y propietarios de negocios herramientas de cálculo precisas para el Retorno de la Inversión Publicitaria (ROAS), Retorno de la Inversión (ROI), costo por adquisición (CPA) y punto de equilibrio (breakeven).</p>
+              <p>Para cualquier consulta relacionada con esta Política de Privacidad o sobre cómo se tratan tus datos, puedes ponerte en contacto a través del correo: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Sin recogida directa de datos personales</h2>
+              <p>En Ads Calculator, tu privacidad es nuestra prioridad. <strong>No recopilamos, almacenamos ni transmitimos ningún tipo de dato que introduzcas en nuestras herramientas de cálculo.</strong> Todos los cálculos se ejecutan de forma local y directa en tu navegador web (client-side). Ninguno de tus inputs de costes, inversión o ingresos se envía a nuestros servidores.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Servicios de terceros y analítica</h2>
+              <p>Aunque no recogemos datos directamente, utilizamos servicios de terceros que instalan cookies y recopilan estadísticas anónimas de uso para optimizar el funcionamiento y rendimiento de la web:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li><strong>Google Analytics 4 (GA4):</strong> Recoge datos anónimos sobre las visitas, páginas visualizadas, tipo de dispositivo y ubicación geográfica general. No registra información de identificación personal (PII).</li>
+                <li><strong>Google Tag Manager (GTM):</strong> Se utiliza para gestionar y desplegar scripts y código de manera segura en el Sitio.</li>
+                <li><strong>Google AdSense:</strong> Mostramos anuncios publicitarios mediante el programa Google AdSense. Google utiliza cookies para ofrecer anuncios personalizados basados en tus visitas a esta y otras páginas web.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Google AdSense y Publicidad Personalizada</h2>
+              <p>Google AdSense es un proveedor externo que utiliza cookies para publicar anuncios en este Sitio. El uso de cookies publicitarias por parte de Google y sus asociados permite mostrar anuncios a los usuarios según las visitas que realizan a este y a otros sitios de Internet.</p>
+              <p>Los usuarios pueden desactivar la publicidad personalizada mediante la configuración de Google:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Para gestionar tus parámetros de anuncios de Google, visita: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuración de Anuncios de Google</a>.</li>
+                <li>Alternativamente, puedes desactivar el uso de cookies para la publicidad personalizada de otros proveedores externos a través de: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">About Ads Choices</a>.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Política de Cookies</h2>
+              <p>Utilizamos cookies técnicas, analíticas y de publicidad. Para una lista completa de las cookies utilizadas, su duración y cómo puedes desactivarlas, consulta nuestra <a href={`/${lang}/cookies`} class="text-blue-600 dark:text-blue-400 hover:underline">Política de Cookies</a>.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Derechos de los Usuarios (RGPD)</h2>
+              <p>Si resides en el Espacio Económico Europeo (EEE), tienes derecho a acceder, rectificar, limitar o solicitar la supresión de tus datos según el Reglamento General de Protección de Datos (RGPD). Al no almacenar datos personales ni formularios, no disponemos de registros asociados directamente a ti, por lo que puedes dirigirte a <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a> para cualquier aclaración.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Actualizaciones de la política</h2>
+              <p>Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Los cambios se aplicarán inmediatamente una vez publicados en esta página. El uso continuado del Sitio implica la aceptación de los nuevos términos.</p>
+            </section>
+          </>
+        )}
       </div>
-    </header>
-
-    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
-          {isCa ? 'Política de Privacitat' : 'Política de Privacidad'}
-        </h1>
-        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">
-          {isCa ? 'Última actualització: Juny de 2026' : 'Última actualización: Junio de 2026'}
-        </p>
-
-        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
-          {isCa ? (
-            <>
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Informació sobre l'operador del lloc</h2>
-                <p>El lloc web <strong>adsroicalc.com</strong> (en endavant, el "Lloc" o "Ads Calculator") és operat per <strong>PauApps</strong>. Ens dediquem a proporcionar a professionals del màrqueting i propietaris de negocis eines de càlcul precises per a Retorn de la Inversió Publicitària (ROAS), Retorn de la Inversió (ROI), cost per adquisició (CPA) i punt d'equilibri (breakeven).</p>
-                <p>Per a qualsevol consulta relacionada amb aquesta Política de Privacitat o sobre com es tracten les teves dades, pots posar-te en contacte a través del correu: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Sense recollida directa de dades personals</h2>
-                <p>A Ads Calculator, la teva privacitat és la nostra prioritat. <strong>No recopilem, emmagatzemem ni transmetem cap tipus de dada que introdueixis a les nostres eines de càlcul.</strong> Tots els càlculs s'executen de forma local i directa al teu navegador web (client-side). Cap dels teus inputs de costos, inversió o ingressos s'envia als nostres servidors.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Serveis de tercers i analítica</h2>
-                <p>Encara que no recollim dades directament, utilitzem serveis de tercers que instal·len cookies i recopilen estadístiques anònimes d'ús per optimitzar el funcionament i rendiment de la web:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li><strong>Google Analytics 4 (GA4):</strong> Recull dades anònimes sobre les visites, pàgines visualitzades, tipus de dispositiu i ubicació geogràfica general. No registra informació d'identificació personal (PII).</li>
-                  <li><strong>Google Tag Manager (GTM):</strong> S'utilitza per gestionar i desplegar scripts i codi de manera segura en el Lloc.</li>
-                  <li><strong>Google AdSense:</strong> Mostrem anuncis publicitaris mitjançant el programa Google AdSense. Google utilitza cookies per oferir anuncis personalitzats basats en les teves visites a aquesta i altres pàgines web.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Google AdSense i Publicitat Personalitzada</h2>
-                <p>Google AdSense és un proveïdor extern que utilitza cookies per publicar anuncis en aquest Lloc. L'ús de cookies publicitàries per part de Google i els seus associats permet mostrar anuncis als usuaris segons les visites que realitzen a aquest i a altres llocs d'Internet.</p>
-                <p>Els usuaris poden desactivar la publicitat personalitzada mitjançant la configuració de Google:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li>Per gestionar els teus paràmetres d'anuncis de Google, visita: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuració d'Anuncis de Google</a>.</li>
-                  <li>Alternativament, pots desactivar l'ús de cookies per a la publicitat personalitzada d'altres proveïdors externs a través de: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">About Ads Choices</a>.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Política de Cookies</h2>
-                <p>Utilitzem cookies tècniques, analítiques i de publicitat. Per a una llista completa de les cookies utilitzades, la seva durada i com pots desactivar-les, consulta la nostra <a href={`/${lang}/cookies`} class="text-blue-600 dark:text-blue-400 hover:underline">Política de Cookies</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Drets dels Usuaris (RGPD)</h2>
-                <p>Si resideixes a l'Espai Econòmic Europeu (EEE), tens dret a accedir, rectificar, limitar o sol·licitar la supressió de les teves dades segons el Reglament General de Protecció de Dades (RGPD). Com que no emmagatzemem dades personals ni formularis, no disposem de registres associats directament a tu, però pots adreçar-te a <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a> per a qualsevol aclariment.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Actualitzacions de la política</h2>
-                <p>Ens reservem el dret de modificar aquesta política de privacitat en qualsevol moment. Els canvis s'aplicaran immediatament un cop publicats en aquesta pàgina. L'ús continuat del Lloc implica l'acceptació dels nous termes.</p>
-              </section>
-            </>
-          ) : (
-            <>
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Información sobre el operador del sitio</h2>
-                <p>El sitio web <strong>adsroicalc.com</strong> (en adelante, el "Sitio" o "Ads Calculator") es operado por <strong>PauApps</strong>. Nos dedicamos a proporcionar a profesionales del marketing y propietarios de negocios herramientas de cálculo precisas para el Retorno de la Inversión Publicitaria (ROAS), Retorno de la Inversión (ROI), costo por adquisición (CPA) y punto de equilibrio (breakeven).</p>
-                <p>Para cualquier consulta relacionada con esta Política de Privacidad o sobre cómo se tratan tus datos, puedes ponerte en contacto a través del correo: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Sin recogida directa de datos personales</h2>
-                <p>En Ads Calculator, tu privacidad es nuestra prioridad. <strong>No recopilamos, almacenamos ni transmitimos ningún tipo de dato que introduzcas en nuestras herramientas de cálculo.</strong> Todos los cálculos se ejecutan de forma local y directa en tu navegador web (client-side). Ninguno de tus inputs de costes, inversión o ingresos se envía a nuestros servidores.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Servicios de terceros y analítica</h2>
-                <p>Aunque no recogemos datos directamente, utilizamos servicios de terceros que instalan cookies y recopilan estadísticas anónimas de uso para optimizar el funcionamiento y rendimiento de la web:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li><strong>Google Analytics 4 (GA4):</strong> Recoge datos anónimos sobre las visitas, páginas visualizadas, tipo de dispositivo y ubicación geográfica general. No registra información de identificación personal (PII).</li>
-                  <li><strong>Google Tag Manager (GTM):</strong> Se utiliza para gestionar y desplegar scripts y código de manera segura en el Sitio.</li>
-                  <li><strong>Google AdSense:</strong> Mostramos anuncios publicitarios mediante el programa Google AdSense. Google utiliza cookies para ofrecer anuncios personalizados basados en tus visitas a esta y otras páginas web.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Google AdSense y Publicidad Personalizada</h2>
-                <p>Google AdSense es un proveedor externo que utiliza cookies para publicar anuncios en este Sitio. El uso de cookies publicitarias por parte de Google y sus asociados permite mostrar anuncios a los usuarios según las visitas que realizan a este y a otros sitios de Internet.</p>
-                <p>Los usuarios pueden desactivar la publicidad personalizada mediante la configuración de Google:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li>Para gestionar tus parámetros de anuncios de Google, visita: <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Configuración de Anuncios de Google</a>.</li>
-                  <li>Alternativamente, puedes desactivar el uso de cookies para la publicidad personalizada de otros proveedores externos a través de: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">About Ads Choices</a>.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Política de Cookies</h2>
-                <p>Utilizamos cookies técnicas, analíticas y de publicidad. Para una lista completa de las cookies utilizadas, su duración y cómo puedes desactivarlas, consulta nuestra <a href={`/${lang}/cookies`} class="text-blue-600 dark:text-blue-400 hover:underline">Política de Cookies</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Derechos de los Usuarios (RGPD)</h2>
-                <p>Si resides en el Espacio Económico Europeo (EEE), tienes derecho a acceder, rectificar, limitar o solicitar la supresión de tus datos según el Reglamento General de Protección de Datos (RGPD). Al no almacenar datos personales ni formularios, no disponemos de registros asociados directamente a ti, pero puedes dirigirte a <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a> para cualquier aclaración.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">7. Actualizaciones de la política</h2>
-                <p>Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Los cambios se aplicarán inmediatamente una vez publicados en esta página. El uso continuado del Sitio implica la aceptación de los nuevos términos.</p>
-              </section>
-            </>
-          )}
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-center md:text-left">
-           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
-              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-              </div>
-              Ads <span class="text-blue-600 italic">Calculator</span>
-           </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
-           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
-           <a href={isCa ? "/ca/blog" : "/es/blog"} title={isCa ? "Veure tots els articles del blog" : "Ver todos los artículos del blog"} class="hover:text-blue-600 transition-colors">Blog</a>
-           <a href={isCa ? "/ca/privacy" : "/es/privacy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : 'Privacidad'}</a>
-           <a href={isCa ? "/ca/legal" : "/es/legal"} class="hover:text-blue-600 transition-colors">Legal</a>
-           <a href={isCa ? "/ca/cookies" : "/es/cookies"} class="hover:text-blue-600 transition-colors">Cookies</a>
-           <a href={isCa ? "/ca/contact" : "/es/contact"} class="hover:text-blue-600 transition-colors">{isCa ? 'Contacte' : 'Contacto'}</a>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </main>
+</Layout>

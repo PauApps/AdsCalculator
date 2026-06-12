@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../utils/blog';
 import '../../styles/global.css';
 
 const lang = 'en';
 const title = 'Growth Blog';
 
 // Get posts specifically for English
-const allPosts = await getCollection('blog');
+const allPosts = await getPublishedPosts();
 const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
 
 ---

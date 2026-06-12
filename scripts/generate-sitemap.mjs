@@ -100,24 +100,47 @@ try {
   );
 
   // 7. Blog Posts dynamically mapped from translations file
+  const spainToday = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
+
+  function isPublished(lang, slug) {
+    const filePath = path.join('./src/content/blog', lang, `${slug}.md`);
+    if (!fs.existsSync(filePath)) return false;
+    
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    // Extract pubDate or date from Frontmatter (handling optional quotes)
+    const pubDateMatch = content.match(/^pubDate:\s*['"]?([\d-]+)['"]?/m);
+    const dateMatch = content.match(/^date:\s*['"]?([\d-]+)['"]?/m);
+    const dateStr = (pubDateMatch && pubDateMatch[1]) || (dateMatch && dateMatch[1]);
+    
+    if (!dateStr) return true; // Default to published if no date is found
+    
+    return dateStr <= spainToday;
+  }
+
   for (const [key, group] of Object.entries(blogTranslations)) {
     const alternates = [];
-    if (group.en) alternates.push({ lang: 'en', path: `/blog/${group.en}` });
-    if (group.es) alternates.push({ lang: 'es', path: `/es/blog/${group.es}` });
-    if (group.ca) alternates.push({ lang: 'ca', path: `/ca/blog/${group.ca}` });
+    
+    const enPub = group.en && isPublished('en', group.en);
+    const esPub = group.es && isPublished('es', group.es);
+    const caPub = group.ca && isPublished('ca', group.ca);
+
+    if (enPub) alternates.push({ lang: 'en', path: `/blog/${group.en}` });
+    if (esPub) alternates.push({ lang: 'es', path: `/es/blog/${group.es}` });
+    if (caPub) alternates.push({ lang: 'ca', path: `/ca/blog/${group.ca}` });
     
     // Add x-default pointing to the English version
-    if (group.en) {
+    if (enPub) {
       alternates.push({ lang: 'x-default', path: `/blog/${group.en}` });
     }
 
-    if (group.en) {
+    if (enPub) {
       pages.push({ path: `/blog/${group.en}`, priority: '0.8', alternates });
     }
-    if (group.es) {
+    if (esPub) {
       pages.push({ path: `/es/blog/${group.es}`, priority: '0.8', alternates });
     }
-    if (group.ca) {
+    if (caPub) {
       pages.push({ path: `/ca/blog/${group.ca}`, priority: '0.8', alternates });
     }
   }

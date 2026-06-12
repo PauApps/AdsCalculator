@@ -1,0 +1,200 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  lang?: 'en' | 'es' | 'ca';
+  customAlternates?: {
+    en: string;
+    es: string;
+    ca: string;
+  };
+}
+
+const { title, description, keywords, lang: propLang, customAlternates } = Astro.props;
+
+// Determine current language dynamically from URL or prop
+const pathname = Astro.url.pathname;
+let currentLang = propLang || 'en';
+
+if (!propLang) {
+  if (pathname.startsWith('/es/') || pathname === '/es') {
+    currentLang = 'es';
+  } else if (pathname.startsWith('/ca/') || pathname === '/ca') {
+    currentLang = 'ca';
+  }
+}
+
+const isCa = currentLang === 'ca';
+const isEs = currentLang === 'es';
+
+// Helper to calculate canonical and alternates base path
+let basePath = pathname;
+if (pathname.startsWith('/es/')) {
+  basePath = pathname.substring(3);
+} else if (pathname === '/es') {
+  basePath = '/';
+} else if (pathname.startsWith('/ca/')) {
+  basePath = pathname.substring(3);
+} else if (pathname === '/ca') {
+  basePath = '/';
+}
+
+if (!basePath.startsWith('/')) {
+  basePath = '/' + basePath;
+}
+
+// If basePath is "/" we want to make it empty for cleaner URL concatenation
+const cleanBasePath = basePath === '/' ? '' : basePath;
+
+// Alternate URLs
+const enUrl = customAlternates ? `https://adsroicalc.com${customAlternates.en}` : `https://adsroicalc.com${cleanBasePath}`;
+const esUrl = customAlternates ? `https://adsroicalc.com${customAlternates.es}` : `https://adsroicalc.com/es${cleanBasePath}`;
+const caUrl = customAlternates ? `https://adsroicalc.com${customAlternates.ca}` : `https://adsroicalc.com/ca${cleanBasePath}`;
+const canonicalUrl = currentLang === 'en' ? enUrl : currentLang === 'es' ? esUrl : caUrl;
+
+// Links for header language toggles
+const enLink = customAlternates ? customAlternates.en : (basePath === '/' ? '/' : basePath);
+const esLink = customAlternates ? customAlternates.es : (basePath === '/' ? '/es' : `/es${basePath}`);
+const caLink = customAlternates ? customAlternates.ca : (basePath === '/' ? '/ca' : `/ca${basePath}`);
+
+const logoLink = currentLang === 'en' ? '/' : `/${currentLang}`;
+const blogLink = currentLang === 'en' ? '/blog' : `/${currentLang}/blog`;
+const privacyLink = currentLang === 'en' ? '/privacy' : `/${currentLang}/privacy`;
+const legalLink = currentLang === 'en' ? '/legal' : `/${currentLang}/legal`;
+const cookiesLink = currentLang === 'en' ? '/cookies' : `/${currentLang}/cookies`;
+
+// Contact link - mailto as requested
+const contactLink = 'mailto:info@adsroicalc.com';
+
+const footerT = {
+  en: {
+    rights: 'All rights reserved.',
+    contact: 'Contact',
+    blog: 'Blog',
+    privacy: 'Privacy',
+    legal: 'Legal',
+    cookies: 'Cookies',
+    blogTitle: 'See all blog posts',
+    privacyTitle: 'Privacy Policy',
+    legalTitle: 'Legal Notice',
+    cookiesTitle: 'Cookie Policy',
+    contactTitle: 'Contact Us',
+  },
+  es: {
+    rights: 'Todos los derechos reservados.',
+    contact: 'Contacto',
+    blog: 'Blog',
+    privacy: 'Privacidad',
+    legal: 'Legal',
+    cookies: 'Cookies',
+    blogTitle: 'Ver todos los artículos del blog',
+    privacyTitle: 'Política de Privacidad',
+    legalTitle: 'Aviso Legal',
+    cookiesTitle: 'Política de Cookies',
+    contactTitle: 'Contacto',
+  },
+  ca: {
+    rights: 'Tots els drets reservats.',
+    contact: 'Contacte',
+    blog: 'Blog',
+    privacy: 'Privadesa',
+    legal: 'Legal',
+    cookies: 'Cookies',
+    blogTitle: 'Veure tots els articles del blog',
+    privacyTitle: 'Política de Privacitat',
+    legalTitle: 'Avís Legal',
+    cookiesTitle: 'Política de Cookies',
+    contactTitle: 'Contacte',
+  }
+}[currentLang as 'en' | 'es' | 'ca'] || footerT.en;
+---
+
+<html lang={currentLang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="ca" href={caUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q73D3FT2VL');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header class="glass sticky top-0 z-50 w-full px-6 py-4 print:hidden">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href={logoLink} class="font-bold text-2xl tracking-tight flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          Ads <span class="text-blue-600 italic">Calculator</span>
+        </a>
+        <nav class="flex gap-3 md:gap-6 items-center">
+          <a href={blogLink} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">{footerT.blog}</a>
+          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
+            <a href={enLink} title="English version" class={`px-2 py-1 rounded-md transition-all ${currentLang === 'en' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>EN</a>
+            <a href={esLink} title="Versión en español" class={`px-2 py-1 rounded-md transition-all ${currentLang === 'es' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>ES</a>
+            <a href={caLink} title="Versió en català" class={`px-2 py-1 rounded-md transition-all ${currentLang === 'ca' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'}`}>CA</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6 print:hidden">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              Ads <span class="text-blue-600 italic">Calculator</span>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {footerT.rights}</p>
+           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+           <a href={blogLink} title={footerT.blogTitle} class="hover:text-blue-600 transition-colors">{footerT.blog}</a>
+           <a href={privacyLink} title={footerT.privacyTitle} class="hover:text-blue-600 transition-colors">{footerT.privacy}</a>
+           <a href={legalLink} title={footerT.legalTitle} class="hover:text-blue-600 transition-colors">{footerT.legal}</a>
+           <a href={cookiesLink} title={footerT.cookiesTitle} class="hover:text-blue-600 transition-colors">{footerT.cookies}</a>
+           <a href={contactLink} title={footerT.contactTitle} class="hover:text-blue-600 transition-colors">{footerT.contact}</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

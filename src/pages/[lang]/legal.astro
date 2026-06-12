@@ -1,5 +1,5 @@
 ---
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
   return [
@@ -25,179 +25,97 @@ const keywords = isCa
   : 'aviso legal, condiciones de uso, ads calculator legal, pauapps';
 ---
 
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`https://adsroicalc.com/${lang}/legal`} />
-    <link rel="alternate" hreflang="en" href="https://adsroicalc.com/legal" />
-    <link rel="alternate" hreflang="es" href="https://adsroicalc.com/es/legal" />
-    <link rel="alternate" hreflang="ca" href="https://adsroicalc.com/ca/legal" />
-    <link rel="alternate" hreflang="x-default" href="https://adsroicalc.com/legal" />
+<Layout title={title} description={description} keywords={keywords} lang={lang as 'es' | 'ca'}>
+  <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
+        {isCa ? 'Avís Legal' : 'Aviso Legal'}
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">
+        {isCa ? 'Última actualització: Juny de 2026' : 'Última actualización: Junio de 2026'}
+      </p>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q73D3FT2VL"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Q73D3FT2VL');
-    </script>
+      <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+        {isCa ? (
+          <>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Informació del titular del lloc web</h2>
+              <p>En compliment de les obligacions legals d'informació de serveis de la societat de la informació, es fa constar que el lloc web <strong>adsroicalc.com</strong> (en endavant, el "Lloc") és propietat de <strong>PauApps</strong>.</p>
+              <p>Per a consultes o comunicació formal, pots contactar directament a través del correu electrònic: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+            </section>
 
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MMWNVNNP');</script>
-    <!-- End Google Tag Manager -->
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Objecte del lloc web</h2>
+              <p>Aquest Lloc té com a objecte oferir de manera gratuïta una sèrie d'eines digitals de càlcul orientades al màrqueting online (càlcul de ROAS, ROI de campanyes, CPA, beneficis bruts i punts d'equilibri). L'accés i ús del Lloc confereix la condició d'usuari i implica l'acceptació plena d'aquestes condicions.</p>
+            </section>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8428748101355923" crossorigin="anonymous"></script>
-  </head>
-  <body class="min-h-screen flex flex-col text-gray-900 dark:text-gray-100 dark:bg-slate-950 hero-gradient">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMWNVNNP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <header class="glass sticky top-0 z-50 w-full px-6 py-4">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href={isCa ? "/ca" : "/es"} class="font-bold text-2xl tracking-tight flex items-center gap-2">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-          </div>
-          Ads <span class="text-blue-600 italic">Calculator</span>
-        </a>
-        <nav class="flex gap-3 md:gap-6 items-center">
-          <a href={isCa ? "/ca/blog" : "/es/blog"} class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white transition-colors">Blog</a>
-          <div class="flex items-center gap-2 text-sm font-medium border-l border-gray-200 dark:border-gray-800 pl-3 md:pl-6">
-            <a href="/legal" title="English version" class="px-2 py-1 rounded-md text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">EN</a>
-            <span class={`px-2 py-1 rounded-md ${isEs ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>ES</span>
-            <span class={`px-2 py-1 rounded-md ${isCa ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' : 'text-gray-500'}`}>CA</span>
-          </div>
-        </nav>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Exempció de responsabilitat</h2>
+              <p>Els càlculs i els gràfics generats per les nostres eines tenen un caràcter <strong>merament informatiu, orientatiu i educatiu</strong>. No constitueixen assessorament professional, fiscal, comercial o financer.</p>
+              <p>Per tant, l'operador no es fa responsable de:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Les decisions empresarials o publicitàries preses pels usuaris basant-se en els resultats de la calculadora.</li>
+                <li>Qualsevol pèrdua econòmica, pressupostos de publicitat exhaurits o errors operatius associats amb l'ús d'aquesta web.</li>
+                <li>Falta de disponibilitat de la pàgina per tasques de manteniment o caigudes del servidor.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Propietat intel·lectual</h2>
+              <p>Tots els continguts de la web (disseny gràfic, logotip, textos, codi de les eines, bases de dades i estils) són propietat de PauApps o de tercers que n'han autoritzat l'ús. Queda totalment prohibida la reproducció, còpia, distribució o ús sense autorització prèvia per escrit.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Enllaços externs i publicitat</h2>
+              <p>Aquest lloc web conté anuncis de Google AdSense i enllaços cap a llocs web de tercers. PauApps no es fa responsable del contingut, polítiques de privacitat o productes de tercers portals. L'accés a aquests enllaços es fa sota la responsabilitat de l'usuari.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Legislació aplicable</h2>
+              <p>Aquest Avís Legal es regeix per la legislació espanyola. Qualsevol controvèrsia es resoldrà en els jutjats del domicili de l'operador, tret que la legislació de consumidors estableixi el contrari.</p>
+            </section>
+          </>
+        ) : (
+          <>
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Información del titular del sitio web</h2>
+              <p>En cumplimiento de las obligaciones legales de información de servicios de la sociedad de la información, se hace constar que el sitio web <strong>adsroicalc.com</strong> (en adelante, el "Sitio") es propiedad de <strong>PauApps</strong>.</p>
+              <p>Para consultas o comunicación formal, puedes contactar directamente a través del correo electrónico: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Objeto del sitio web</h2>
+              <p>Este Sitio tiene como objeto ofrecer de manera gratuita una serie de herramientas digitales de cálculo orientadas al marketing online (cálculo de ROAS, ROI de campañas, CPA, beneficios brutos y puntos de equilibrio). El acceso y uso del Sitio confiere la condición de usuario e implica la aceptación plena de estas condiciones.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Exención de responsabilidad</h2>
+              <p>Los cálculos y gráficos generados por nuestras herramientas tienen un carácter <strong>meramente informativo, orientativo y educativo</strong>. No constituyen asesoramiento profesional, fiscal, comercial o financiero.</p>
+              <p>Por tanto, el operador no se hace responsable de:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>Las decisiones empresariales o publicitarias tomadas por los usuarios basándose en los resultados de la calculadora.</li>
+                <li>Cualquier pérdida económica, presupuestos de publicidad agotados o errores operativos asociados con el uso de esta web.</li>
+                <li>Falta de disponibilidad de la página por tareas de mantenimiento o caídas del servidor.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Propiedad intelectual</h2>
+              <p>Todos los contenidos de la web (diseño gráfico, logotipo, textos, código de las herramientas, bases de datos y estilos) son propiedad de PauApps o de terceros que han autorizado su uso. Queda totalmente prohibida la reproducción, copia, distribución o uso sin autorización previa por escrito.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Enlaces externos y publicidad</h2>
+              <p>Este sitio web contiene anuncios de Google AdSense y enlaces hacia sitios web de terceros. PauApps no se hace responsable del contenido, políticas de privacidad o productos de terceros portales. El acceso a dichos enlaces se realiza bajo la responsabilidad del usuario.</p>
+            </section>
+
+            <section>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Legislación aplicable</h2>
+              <p>Este Aviso Legal se rige por la legislación española. Cualquier controversia se resolverá en los juzgados del domicilio del operador, salvo que la legislación de consumidores establezca lo contrario.</p>
+            </section>
+          </>
+        )}
       </div>
-    </header>
-
-    <main class="flex-grow py-12 sm:py-20 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/20 dark:border-white/5 p-8 sm:p-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-2 tracking-tight">
-          {isCa ? 'Avís Legal' : 'Aviso Legal'}
-        </h1>
-        <p class="text-slate-500 dark:text-slate-400 text-sm mb-10">
-          {isCa ? 'Última actualització: Juny de 2026' : 'Última actualización: Junio de 2026'}
-        </p>
-
-        <div class="prose dark:prose-invert max-w-none space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
-          {isCa ? (
-            <>
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Informació del titular del lloc web</h2>
-                <p>En compliment de les obligacions legals d'informació de serveis de la societat de la informació, es fa constar que el lloc web <strong>adsroicalc.com</strong> (en endavant, el "Lloc") és propietat de <strong>PauApps</strong>.</p>
-                <p>Per a consultes o comunicació formal, pots contactar directament a través del correu electrònic: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Objecte del lloc web</h2>
-                <p>Aquest Lloc té com a objecte oferir de manera gratuïta una sèrie d'eines digitals de càlcul orientades al màrqueting online (càlcul de ROAS, ROI de campanyes, CPA, beneficis bruts i punts d'equilibri). L'accés i ús del Lloc confereix la condició d'usuari i implica l'acceptació plena d'aquestes condicions.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Exempció de responsabilitat</h2>
-                <p>Els càlculs i els gràfics generats per les nostres eines tenen un caràcter <strong>merament informatiu, orientatiu i educatiu</strong>. No constitueixen assessorament professional, fiscal, comercial o financer.</p>
-                <p>Per tant, l'operador no es fa responsable de:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li>Les decisions empresarials o publicitàries preses pels usuaris basant-se en els resultats de la calculadora.</li>
-                  <li>Qualsevol pèrdua econòmica, pressupostos de publicitat exhaurits o errors operatius associats amb l'ús d'aquesta web.</li>
-                  <li>Falta de disponibilitat de la pàgina per tasques de manteniment o caigudes del servidor.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Propietat intel·lectual</h2>
-                <p>Tots els continguts de la web (disseny gràfic, logotip, textos, codi de les eines, bases de dades i estils) són propietat de PauApps o de tercers que n'han autoritzat l'ús. Queda totalment prohibida la reproducció, còpia, distribució o ús sense autorització prèvia per escrit.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Enllaços externs i publicitat</h2>
-                <p>Aquest lloc web conté anuncis de Google AdSense i enllaços cap a llocs web de tercers. PauApps no es fa responsable del contingut, polítiques de privacitat o productes de tercers portals. L'accés a aquests enllaços es fa sota la responsabilitat de l'usuari.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Legislació aplicable</h2>
-                <p>Aquest Avís Legal es regeix per la legislació espanyola. Qualsevol controvèrsia es resoldrà en els jutjats del domicili de l'operador, tret que la legislació de consumidors estableixi el contrari.</p>
-              </section>
-            </>
-          ) : (
-            <>
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">1. Información del titular del sitio web</h2>
-                <p>En cumplimiento de las obligaciones legales de información de servicios de la sociedad de la información, se hace constar que el sitio web <strong>adsroicalc.com</strong> (en adelante, el "Sitio") es propiedad de <strong>PauApps</strong>.</p>
-                <p>Para consultas o comunicación formal, puedes contactar directamente a través del correo electrónico: <a href="mailto:info@adsroicalc.com" class="text-blue-600 dark:text-blue-400 hover:underline">info@adsroicalc.com</a>.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">2. Objeto del sitio web</h2>
-                <p>Este Sitio tiene como objeto ofrecer de manera gratuita una serie de herramientas digitales de cálculo orientadas al marketing online (cálculo de ROAS, ROI de campañas, CPA, beneficios brutos y puntos de equilibrio). El acceso y uso del Sitio confiere la condición de usuario e implica la aceptación plena de estas condiciones.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">3. Exención de responsabilidad</h2>
-                <p>Los cálculos y gráficos generados por nuestras herramientas tienen un carácter <strong>meramente informativo, orientativo y educativo</strong>. No constituyen asesoramiento profesional, fiscal, comercial o financiero.</p>
-                <p>Por tanto, el operador no se hace responsable de:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                  <li>Las decisiones empresariales o publicitarias tomadas por los usuarios basándose en los resultados de la calculadora.</li>
-                  <li>Cualquier pérdida económica, presupuestos de publicidad agotados o errores operativos asociados con el uso de esta web.</li>
-                  <li>Falta de disponibilidad de la página por tareas de mantenimiento o caídas del servidor.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">4. Propiedad intelectual</h2>
-                <p>Todos los contenidos de la web (diseño gráfico, logotipo, textos, código de las herramientas, bases de datos y estilos) son propiedad de PauApps o de terceros que han autorizado su uso. Queda totalmente prohibida la reproducción, copia, distribución o uso sin autorización previa por escrito.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">5. Enlaces externos y publicidad</h2>
-                <p>Este sitio web contiene anuncios de Google AdSense y enlaces hacia sitios web de terceros. PauApps no se hace responsable del contenido, políticas de privacidad o productos de terceros portales. El acceso a dichos enlaces se realiza bajo la responsabilidad del usuario.</p>
-              </section>
-
-              <section>
-                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">6. Legislación aplicable</h2>
-                <p>Este Aviso Legal se rige por la legislación española. Cualquier controversia se resolverá en los juzgados del domicilio del operador, salvo que la legislación de consumidores establezca lo contrario.</p>
-              </section>
-            </>
-          )}
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-white/50 dark:bg-slate-900/50 border-t border-gray-200 dark:border-gray-800 py-12 px-6">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-center md:text-left">
-           <div class="font-bold text-xl mb-2 flex items-center justify-center md:justify-start gap-2">
-              <div class="w-6 h-6 bg-blue-600 rounded-md flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-              </div>
-              Ads <span class="text-blue-600 italic">Calculator</span>
-           </div>
-           <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {isCa ? 'Tots els drets reservats.' : 'Todos los derechos reservados.'}</p>
-           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
-           <a href={isCa ? "/ca/blog" : "/es/blog"} title={isCa ? "Veure tots els articles del blog" : "Ver todos los artículos del blog"} class="hover:text-blue-600 transition-colors">Blog</a>
-           <a href={isCa ? "/ca/privacy" : "/es/privacy"} class="hover:text-blue-600 transition-colors">{isCa ? 'Privadesa' : 'Privacidad'}</a>
-           <a href={isCa ? "/ca/legal" : "/es/legal"} class="hover:text-blue-600 transition-colors">Legal</a>
-           <a href={isCa ? "/ca/cookies" : "/es/cookies"} class="hover:text-blue-600 transition-colors">Cookies</a>
-           <a href={isCa ? "/ca/contact" : "/es/contact"} class="hover:text-blue-600 transition-colors">{isCa ? 'Contacte' : 'Contacto'}</a>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </main>
+</Layout>

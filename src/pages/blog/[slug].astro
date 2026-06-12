@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../utils/blog';
 import '../../styles/global.css';
 import blogTranslations from '../../utils/blog-translations.json';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
+  const blogEntries = await getPublishedPosts();
   // Specifically filter for English entries for the root /blog
   const englishEntries = blogEntries.filter(entry => entry.slug.startsWith('en/'));
   

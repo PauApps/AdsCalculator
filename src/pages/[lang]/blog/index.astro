@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../../utils/blog';
 import '../../../styles/global.css';
 
 export function getStaticPaths() {
@@ -15,7 +15,7 @@ const isCa = lang === 'ca';
 const title = isCa ? 'Blog de Growth' : isEs ? 'Blog de Growth' : 'Growth Blog';
 
 // Get posts specifically for the current language
-const allPosts = await getCollection('blog');
+const allPosts = await getPublishedPosts();
 const posts = allPosts.filter(post => post.id.startsWith(`${lang}/`));
 
 ---
