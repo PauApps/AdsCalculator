@@ -186,6 +186,9 @@ const footerT = {
            </div>
            <p class="text-sm text-slate-500 dark:text-slate-400">© 2026 Ads Calculator. {footerT.rights}</p>
            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Contact: <a href="mailto:info@adsroicalc.com" class="hover:text-blue-600 transition-colors">info@adsroicalc.com</a></p>
+           <p class="text-sm text-slate-400 dark:text-slate-500 mt-1">
+             {currentLang === 'en' ? 'Web developed by ' : currentLang === 'ca' ? 'Web desenvolupada per ' : 'Web desarrollada por '}<strong>PauApps</strong>
+           </p>
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
            <a href={blogLink} title={footerT.blogTitle} class="hover:text-blue-600 transition-colors">{footerT.blog}</a>
