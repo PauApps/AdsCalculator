@@ -244,9 +244,86 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"es/breakeven-roas-ecommerce.md": {
+	id: "es/breakeven-roas-ecommerce.md";
+  slug: "es/breakeven-roas-ecommerce";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/calculadora-roas-predecir-ganancias-negocio.md": {
+	id: "es/calculadora-roas-predecir-ganancias-negocio.md";
+  slug: "es/calculadora-roas-predecir-ganancias-negocio";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/calcular-rentabilidad-campana-growth-marketing.md": {
+	id: "es/calcular-rentabilidad-campana-growth-marketing.md";
+  slug: "es/calcular-rentabilidad-campana-growth-marketing";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/cogs-costo-bienes-vendidos.md": {
+	id: "es/cogs-costo-bienes-vendidos.md";
+  slug: "es/cogs-costo-bienes-vendidos";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "es/errores-roi-ads.md": {
 	id: "es/errores-roi-ads.md";
   slug: "es/errores-roi-ads";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/estrategias-escalar-roas-facebook-ads.md": {
+	id: "es/estrategias-escalar-roas-facebook-ads.md";
+  slug: "es/estrategias-escalar-roas-facebook-ads";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/google-ads-smart-bidding-algoritmo.md": {
+	id: "es/google-ads-smart-bidding-algoritmo.md";
+  slug: "es/google-ads-smart-bidding-algoritmo";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/guia-agencias-reportar-roi-real.md": {
+	id: "es/guia-agencias-reportar-roi-real.md";
+  slug: "es/guia-agencias-reportar-roi-real";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/guia-definitiva-cpa-margen-neto.md": {
+	id: "es/guia-definitiva-cpa-margen-neto.md";
+  slug: "es/guia-definitiva-cpa-margen-neto";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/impacto-iva-impuestos-anuncios.md": {
+	id: "es/impacto-iva-impuestos-anuncios.md";
+  slug: "es/impacto-iva-impuestos-anuncios";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/impacto-ltv-roi-publicitario.md": {
+	id: "es/impacto-ltv-roi-publicitario.md";
+  slug: "es/impacto-ltv-roi-publicitario";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/metricas-vanidad-vs-metricas-negocio.md": {
+	id: "es/metricas-vanidad-vs-metricas-negocio.md";
+  slug: "es/metricas-vanidad-vs-metricas-negocio";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -268,6 +345,13 @@ declare module 'astro:content' {
 "es/roas-de-punto-de-equilibrio.md": {
 	id: "es/roas-de-punto-de-equilibrio.md";
   slug: "es/roas-de-punto-de-equilibrio";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"es/roas-vs-roi.md": {
+	id: "es/roas-vs-roi.md";
+  slug: "es/roas-vs-roi";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
